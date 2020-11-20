@@ -1,0 +1,552 @@
+@font-face {
+  font-family: Typewriter;
+  src: url('MonospaceTypewriter.ttf');
+}
+
+:root {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --checkbox-scale: 1;
+}
+
+#progress {
+  width: 512px;
+  height: 32px;
+  margin: auto;
+  background-color: #aaaaaa;
+}
+
+#bar {
+  width: 0px;
+  height: 32px;
+  background-color: #33ff33;
+}
+
+body {
+  text-align: center;
+  font-family: Typewriter, serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  -moz-transform-origin: 0 0;
+}
+
+a {
+  color: #3366ff;
+}
+
+button {
+	border: 0;
+  font-family: Typewriter, serif;
+  font-size: 1rem;
+  margin: 2px;
+  background-color: #aaaaaa;
+  color: #000000;
+}
+
+input[type=checkbox] {
+  width: calc(12px * var(--checkbox-scale));
+  height: calc(12px * var(--checkbox-scale));
+  top: calc(-6px * (var(--checkbox-scale) - 1));
+}
+
+.options-button {
+  width: 352px;
+  height: 96px;
+}
+
+.mini-options-button {
+  width: 288px;
+  height: 20px;
+  font-size: 0.875rem;
+}
+
+.options-div {
+  width: 352px;
+  height: 96px;
+  display: table;
+  text-align: center;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.disabled {
+  background-color: #555555;
+}
+
+.autobuyerdiv {
+  display: table;
+  text-align: center;
+  width: 352px;
+  height: 128px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.autobuyerunlockbutton {
+  text-align: center;
+  width: 362px;
+  height: 72px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.challengediv {
+  display: table;
+  text-align: center;
+  width: 512px;
+  height: 256px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.infinitychallengediv {
+  display: table;
+  text-align: center;
+  width: 512px;
+  height: 320px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.eternitychallengediv {
+  display: table;
+  text-align: center;
+  width: 512px;
+  height: 320px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.complexitychallengediv {
+  display: table;
+  text-align: center;
+  width: 576px;
+  height: 288px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.eternitymilestonediv {
+  display: table;
+  text-align: center;
+  width: 256px;
+  height: 224px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.chromadiv {
+  display: table;
+  text-align: center;
+  width: 400px;
+  height: 128px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.complexityachievementdiv {
+  display: table;
+  text-align: center;
+  width: 272px;
+  height: 272px;
+  font-size: 0.875rem;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.smallpowertd  {
+  text-align: center;
+  font-size: 0.875rem;
+  width: 320px;
+  height: 80px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.smallpowertd button {
+  font-size: 0.875rem;
+}
+
+.mediumpowertd  {
+  text-align: center;
+  font-size: 0.875rem;
+  width: 320px;
+  height: 96px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.mediumpowertd button {
+  font-size: 0.875rem;
+}
+
+.largepowertd {
+  text-align: center;
+  font-size: 0.875rem;
+  width: 320px;
+  height: 112px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.largepowertd button {
+  font-size: 0.875rem;
+}
+
+.oraclediv {
+  margin: auto;
+  text-align: center;
+  width: 1024px;
+  height: 128px;
+  padding: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.finalitymilestonediv {
+  display: table;
+  text-align: center;
+  width: 256px;
+  height: 256px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.goaldiv {
+  display: table;
+  text-align: center;
+  width: 256px;
+  height: 128px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.studynormalunbuyable {
+  display: table;
+  text-align: center;
+  background: #555555;
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studynormalbuyable {
+  display: table;
+  text-align: center;
+  background: radial-gradient(var(--study-normal-color), #aaaaaa);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studynormalbought {
+  display: table;
+  text-align: center;
+  background: var(--study-normal-color);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studyinfinityunbuyable {
+  display: table;
+  text-align: center;
+  background: #555555;
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studyinfinitybuyable {
+  display: table;
+  text-align: center;
+  background: radial-gradient(var(--study-infinity-color), #aaaaaa);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studyinfinitybought {
+  display: table;
+  text-align: center;
+  background: var(--study-infinity-color);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studyeternityunbuyable {
+  display: table;
+  text-align: center;
+  background: #555555;
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studyeternitybuyable {
+  display: table;
+  text-align: center;
+  background: radial-gradient(var(--study-eternity-color), #aaaaaa);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studyeternitybought {
+  display: table;
+  text-align: center;
+  background: var(--study-eternity-color);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studychromaunbuyable {
+  display: table;
+  text-align: center;
+  background: #555555;
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studychromabuyable {
+  display: table;
+  text-align: center;
+  background: radial-gradient(var(--study-chroma-color), #aaaaaa);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studychromabought {
+  display: table;
+  text-align: center;
+  background: var(--study-chroma-color);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.yellowspan, .yellowdiv > span {
+  color: #ffff00;
+}
+
+.greyspan, .greydiv > span {
+  color: #aaaaaa;
+}
+
+.purplespan, .purplediv > span {
+  color: #6633cc;
+}
+
+.orangespan, .orangediv > span {
+  color: #ff9933;
+}
+
+.cyanspan, .cyandiv > span {
+  color: #00ffff;
+}
+
+.greenspan, .greendiv > span {
+  color: #33ff33;
+}
+
+.redspan, .reddiv > span {
+  color: #ff0000;
+}
+
+.magentaspan, .magentadiv > span {
+  color: #ff00ff;
+}
+
+.brownspan, .browndiv > span {
+  color: #aa7777;
+}
+
+.goldspan, .golddiv > span {
+  color: #ccaa33;
+}
+
+.chromacurrentgreydiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, #aaaaaa);
+}
+
+.chromanextgreydiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, var(--next-grey-color));
+}
+
+.chromacurrentpurplediv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, #6633cc);
+}
+
+.chromanextpurplediv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, var(--next-purple-color));
+}
+
+.chromacurrentorangediv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, #ff9933);
+}
+
+.chromanextorangediv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, var(--next-orange-color));
+}
+
+.chromacurrentcyandiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, #00ffff);
+}
+
+.chromanextcyandiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, var(--next-cyan-color));
+}
+
+.chromacurrentgreendiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, #33ff33);
+}
+
+.chromanextgreendiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, var(--next-green-color));
+}
+
+.chromacurrentreddiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, #ff0000);
+}
+
+.chromanextreddiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, var(--next-red-color));
+}
+
+.greytogrey {
+   background-image: linear-gradient(to right, #aaaaaa, #aaaaaa);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greytopurple {
+   background-image: linear-gradient(to right, #aaaaaa, #6633cc);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greytoorange {
+   background-image: linear-gradient(to right, #aaaaaa, #ff9933);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greytogreen {
+   background-image: linear-gradient(to right, #aaaaaa, #33ff33);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.purpletogrey {
+   background-image: linear-gradient(to right, #6633cc, #aaaaaa);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.purpletopurple {
+   background-image: linear-gradient(to right, #6633cc, #6633cc);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.purpletoorange {
+   background-image: linear-gradient(to right, #6633cc, #ff9933);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.purpletogreen {
+   background-image: linear-gradient(to right, #6633cc, #33ff33);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.orangetogrey {
+   background-image: linear-gradient(to right, #ff9933, #aaaaaa);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.orangetopurple {
+   background-image: linear-gradient(to right, #ff9933, #6633cc);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.orangetoorange {
+   background-image: linear-gradient(to right, #ff9933, #ff9933);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.orangetogreen {
+   background-image: linear-gradient(to right, #ff9933, #33ff33);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greentogrey {
+   background-image: linear-gradient(to right, #33ff33, #aaaaaa);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greentopurple {
+   background-image: linear-gradient(to right, #33ff33, #6633cc);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greentoorange {
+   background-image: linear-gradient(to right, #33ff33, #ff9933);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greentogreen {
+   background-image: linear-gradient(to right, #33ff33, #33ff33);
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
