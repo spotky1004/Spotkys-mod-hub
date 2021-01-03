@@ -22,20 +22,24 @@ let Generator = function (i) {
       player.generators[i - 1].bought += n;
     },
     costIncreasePer() {
-      let extraFactor = Challenge.isChallengeEffectActive(5) ? 2 : 1;
+      let extraFactor = 1;
+      //let extraFactor = Challenge.isChallengeEffectActive(5) ? 2 : 1;
       return Decimal.pow(2, i * extraFactor);
     },
     initialCost() {
-      return Decimal.pow(2, Math.pow(i, 2));
+      return Decimal.pow(5, (i-1)*i+1);
     },
     cost() {
-      return this.initialCost().times(Decimal.pow(this.costIncreasePer(), this.bought()));
+      return this.initialCost().times(Decimal.pow(this.costIncreasePer(), Decimal.pow(i+1, this.bought())));
     },
     costFor(n) {
       return this.cost().times(Decimal.pow(this.costIncreasePer(), n).minus(1)).div(Decimal.minus(this.costIncreasePer(), 1));
     },
     multiplier() {
       let factors = [
+        Decimal.pow(2, this.bought()), Boost.multiplier(), Prestige.multiplier(),
+      ]
+      /*let factors = [
         Decimal.pow(2, this.bought() / 8), Boost.multiplier(), Prestige.multiplier(),
         InfinityPoints.multiplier(), Challenge.multiplier(),
         InfinityStars.multiplier(), EternityStars.multiplier(),
@@ -46,16 +50,17 @@ let Generator = function (i) {
         Study(2).effect(), Study(3).effect(), Study(4).effect(), Study(13).effect(),
         EternityChallenge.getEternityChallengeReward(1), ComplexityChallenge.getComplexityChallengeReward(1),
         FinalityStars.multiplier(),
-      ];
+      ];*/
       let multiplier = factors.reduce((a, b) => a.times(b));
-      let powFactors = [
+      /*let powFactors = [
         Challenge.isChallengeRunning(1) ? ((i === 1) ? 4 : 0) : 1,
         InfinityChallenge.isInfinityChallengeRunning(4) ? InfinityChallenge.infinityChallenge4Pow() : 1,
         InfinityChallenge.isInfinityChallengeRunning(5) ? InfinityChallenge.infinityChallenge5Pow() : 1,
         EternityChallenge.isEternityChallengeRunning(1) ? EternityChallenge.eternityChallenge1InfinityStarsEffect() : 1,
         EternityStars.power(), Powers.getTotalEffect('normal'), FinalityShardUpgrade(1).effect(),
-      ];
-      return Generators.nerf(multiplier.safePow(powFactors.reduce((a, b) => a * b)));
+      ];*/
+      //return Generators.nerf(multiplier.safePow(powFactors.reduce((a, b) => a * b)));
+      return multiplier;
     },
     productionPerSecond() {
       return this.amount().times(this.multiplier());

@@ -75,7 +75,7 @@ function initialLastTenFinalities() {
 let initialSeed = RNG.createSeed();
 
 let initialPlayer = {
-  stars: new Decimal(2),
+  stars: new Decimal(10),
   boost: {bought: 0},
   boostPower: 1,
   bestBoostPower: 1,

@@ -50,7 +50,7 @@ function gameLoop(diff, display) {
   EternityChallenge.checkForAutoEternityChallengeCompletions();
   ComplexityChallenge.checkForComplexityChallengeCompletions();
   ComplexityAchievements.checkForComplexityAchievements();
-  // Why are these here? Because these are used mainly for display, and we want 
+  // Why are these here? Because these are used mainly for display, and we want
   // displayed peak to be at most current. Why so late? Because theoretically
   // a complexity achievement could give you EP, which might mess up stuff.
   // Autobuyers also use these but they compute them at the time if needed.
@@ -64,5 +64,6 @@ function gameLoop(diff, display) {
   if (display !== false) {
     maybeFitToWidth();
     updateDisplay();
+    bgUpdate();
   }
 }

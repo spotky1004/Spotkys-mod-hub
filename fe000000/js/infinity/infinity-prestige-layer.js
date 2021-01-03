@@ -12,8 +12,8 @@ let InfinityPrestigeLayer = {
   },
   breakInfinityButtonText() {
     return player.breakInfinity ?
-      ('Fix infinity: force infinity at ' + format(Decimal.pow(2, 256)) + ' stars') :
-      ('Break infinity: allow stars to go beyond ' + format(Decimal.pow(2, 256)) + ', with greater IP gain');
+      ('Fix infinity: force infinity at ' + format(Decimal.pow(2, 1024)) + ' stars') :
+      ('Break infinity: allow stars to go beyond ' + format(Decimal.pow(2, 1024)) + ', with greater IP gain');
   },
   toggleBreakInfinity() {
     if (this.canInfinityBeBroken()) {
@@ -24,7 +24,7 @@ let InfinityPrestigeLayer = {
     if (InfinityChallenge.isSomeInfinityChallengeRunning()) {
       return InfinityChallenge.getInfinityChallengeGoal(InfinityChallenge.currentInfinityChallenge());
     } else {
-      return Decimal.pow(2, 256);
+      return Decimal.pow(2, 1024);
     }
   },
   canInfinity() {
@@ -46,7 +46,7 @@ let InfinityPrestigeLayer = {
     if (!this.canInfinity()) {
       return new Decimal(0);
     }
-    let oom = (this.isInfinityBroken() ? this.bestStarsThisInfinity() : this.starRequirementForInfinity()).max(1).log(2) / 256;
+    let oom = (this.isInfinityBroken() ? this.bestStarsThisInfinity() : this.starRequirementForInfinity()).max(1).log(2) / 1024;
     return Decimal.pow(2, oom).floor();
   },
   infinityPoints() {
@@ -69,7 +69,7 @@ let InfinityPrestigeLayer = {
     }
   },
   infinityPointNext() {
-    return Decimal.pow(this.infinityPointGain().plus(1), 256);
+    return Decimal.pow(this.infinityPointGain().plus(1), 1024);
   },
   infinityPointNextText() {
     if (this.infinityPointGain().lt(256)) {
@@ -129,7 +129,7 @@ let InfinityPrestigeLayer = {
     InfinityGenerators.list.forEach(x => x.resetAmount());
     player.stats.bestStarsThisInfinity = Stars.amount();
     player.stats.timeSinceInfinity = 0;
-    player.stats.timeSinceLastPeakIPPerSec = Math.pow(2, 256);
+    player.stats.timeSinceLastPeakIPPerSec = Math.pow(2, 1024);
     player.stats.peakIPPerSec = new Decimal(0);
     player.stats.purchasesThisInfinity = 0;
     player.stats.purchasesThisInfinityByType = [0, 0, 0, 0, 0, 0, 0, 0, 0];

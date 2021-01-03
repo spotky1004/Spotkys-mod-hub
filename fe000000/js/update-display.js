@@ -691,6 +691,7 @@ function updateDisplay() {
   b[22].style.display = Goals.areAllGoalsCompleted() ? '' : 'none';
   b[23].style.display = Tabs.displayTabRow(1) ? '' : 'none';
   b[24].style.display = Tabs.isTabVisible('main') ? '' : 'none';
+  document.getElementById('backgroundCanvas').style.display = Tabs.isTabVisible('main') ? '' : 'none';
   b[24].style.background = Colors.getButtonColor(Options.tabColors(), 'normal');
   b[25].style.display = Tabs.isTabVisible('infinity') ? '' : 'none';
   b[25].style.background = Colors.getButtonColor(Options.tabColors(), 'infinity');

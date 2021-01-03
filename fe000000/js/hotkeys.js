@@ -14,48 +14,47 @@ window.addEventListener('keydown', function(event) {
   }
   switch (event.keyCode) {
     case 65: // A
-      Autobuyers.toggleAll();
+      //Autobuyers.toggleAll();
     break;
 
     case 66: // B
       if (shiftDown) {
-        Boost.buy();
+        //Boost.buy();
       } else {
-        Boost.buyMax();
+        //Boost.buyMax();
       }
     break;
 
     case 67: // C
-      ComplexityPrestigeLayer.complexity(true);
+      //ComplexityPrestigeLayer.complexity(true);
     break;
 
     case 69: // E, also, nice
-      EternityPrestigeLayer.eternity(true);
+      //EternityPrestigeLayer.eternity(true);
     break;
 
     case 70: // F
-      FinalityPrestigeLayer.finality(true);
+      //FinalityPrestigeLayer.finality(true);
     break;
 
     case 73: // I
-      InfinityPrestigeLayer.infinity(true);
+      //InfinityPrestigeLayer.infinity(true);
     break;
 
     case 77: // M
-      MaxAll.maxAll();
+      //MaxAll.maxAll();
     break;
 
     case 79: // O
-      Oracle.invoke();
+      //Oracle.invoke();
     break;
 
     case 80: // P
-      Prestige.prestige(true);
+      //Prestige.prestige(true);
     break;
 
     case 83: // S
-      Sacrifice.sacrifice(true);
+      //Sacrifice.sacrifice(true);
     break;
   }
 }, false);
-

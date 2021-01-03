@@ -3,6 +3,8 @@
   <title>FE000000</title>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <meta content="utf-8" http-equiv="encoding">
+  <script src="js/background.js"></script>
+
   <script src="js/tslib.js"></script>
   <script src="js/break_infinity.min.js"></script>
   <script src="js/ad-notations.min.js"></script>
@@ -88,6 +90,9 @@
   <link rel="stylesheet" href="styles.css?time=1605644807829"></link>
 </head>
 <body>
+  <div id="backgroundCanvas" style="position: absolute; top: 0; left: 0; z-index:-9">
+    <canvas id="canvas" width="300" height="300"></canvas>
+  </div>
   <div id="loading">
     <span>The game is loading; this message should only appear for a few seconds.</span>
     <br/>
@@ -190,7 +195,7 @@
         <div id="b59">
           <span><span id="e61"></span></span>
         </div>
-        <div id="b60">
+        <div id="b60" style="display: none;">
           <span>You have <span id="e62"></span> boost<span id="e63"></span>, multiplying all <span id="e64"></span> by <span id="e65"></span>x (<span id="e66"></span>x each). <button id="b61" onclick="Boost.buy()">Cost: <span id="e67"></span></button> <button id="b62" onclick="Boost.buyMax()">Max</button></span>
         </div>
         <div id="b63">
@@ -206,7 +211,7 @@
         <div id="b66">
           <span>Your <span id="e75"></span> is <span id="e76"></span> (giving <span id="e77"></span> extra theorem<span id="e78"></span>, next at <span id="e79"></span>).</span>
         </div>
-        <span id="b67">View all <span id="e80"></span> even if they would be otherwise invisible: <input id="b68" type="checkbox"></input></span> 
+        <span id="b67">View all <span id="e80"></span> even if they would be otherwise invisible: <input id="b68" type="checkbox"></input></span>
         <br/>
         <br/>
         <table style="margin-left: auto; margin-right: auto; border-spacing: 24px 0px; border-collapse: separate;">
@@ -4852,7 +4857,7 @@
           <span id="b1557">Goals: <input id="b1558" class="goals-tab-option" type="checkbox"></input><span style="display: inline-block; width: 16px;"></span></span>
           <span id="b1559">Statistics: <input id="b1560" class="statistics-tab-option" type="checkbox"></input><span style="display: inline-block; width: 16px;"></span></span>
           <span id="b1561">Last Ten Runs: <input id="b1562" class="last-ten-runs-tab-option" type="checkbox"></input><span style="display: inline-block; width: 16px;"></span></span>
-          <span id="b1563">Options: cannot be hidden</span> 
+          <span id="b1563">Options: cannot be hidden</span>
         </span>
       </div>
       <div id="b1564">
