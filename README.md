@@ -1,5 +1,5 @@
 # Spotkys-mod-hub
-All of my modded game's data here... Have fun!
+All of my modded game's here... Have fun!
 
 # Mod list
 [Ordinal-Dimensions](https://spotmod.netlify.app/Ordinal-Markup/Ordinal-Dimensions/, "Ordinal-Dimensions") (modded [Ordinal-Markup](https://patcailmemer.github.io/Time-Layers/, "Ordinal-Markup"))
