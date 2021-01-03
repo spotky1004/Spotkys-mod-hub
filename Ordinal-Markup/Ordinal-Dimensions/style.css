@@ -1,0 +1,629 @@
+.tabButton {
+  font-family: sans-serif;
+  color: #000000;
+  background: #FFFFFF;
+  border-radius: 5px;
+  border-color: #000000;
+  border-weight: 10px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  width: 120px;
+  height: 40px;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+.tabButton:hover {
+  background: #DFDFDF
+}
+
+.infinityTabButton {
+  font-family: sans-serif;
+  color: #FFFFFF;
+  background: #000000;
+  border-radius: 5px;
+  border-color: #000000;
+  border-weight: 10px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  width: 120px;
+  height: 40px;
+  font-size: 15pt;
+  font-weight: bold;
+  border: solid #B67F33
+}
+
+.infinityTabButton:hover {
+  background: #B67F33;
+  color: #000000;
+}
+
+.boosterTabButton {
+  font-family: sans-serif;
+  color: #0000FF;
+  background: #000000;
+  border-radius: 5px;
+  border-color: #0000FF;
+  border-weight: 10px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  width: 120px;
+  height: 40px;
+  font-size: 15pt;
+  font-weight: bold;
+  border: solid #0000FF
+}
+
+.boosterTabButton:hover {
+  background: #FFFFFF;
+  color: #000080;
+}
+
+#warpBasic {
+  margin: 0 auto;
+  text-align: center;
+}
+#warpBasic > table {
+  width: 60%;
+  text-align: center;
+}
+
+.normalButton {
+  font-family: sans-serif;
+  color: #000000;
+  background: #FFFFFF;
+  border-radius: 2px;
+  border-color: #000000;
+  border-width:1.5px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+}
+
+.normalButton:hover {
+  background: #EFEFEF
+}
+
+.infinityButton {
+  font-family: sans-serif;
+  color: #FFFFFF;
+  background: #000000;
+  border-radius: 2px;
+  border-color: #B67F33;
+  border-width: 2px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+}
+
+.infinityButton:hover {
+  background: #B67F33;
+  color: #000000;
+}
+
+.autobuyerBox {
+  margin-right: 1vw;
+  display: block; float: left;
+  width: 17vw; height: 20vh;
+  color: black;
+  background-color: #eee;
+  border: 4px solid #B67F33; border-radius: 2px;
+}
+.autobuyerBox > div {
+  margin-bottom: 5px;
+}
+.autoName {
+  width: 100%;
+  text-align: center;
+}
+.autoUpgrade {
+  margin: 0 0 0 5%;
+  width: 90%;
+}
+.autoInterval {
+  width: 100%;
+  text-align: center;
+}
+.autoActive {
+  width: 100%;
+  text-align: center;
+}
+
+.markChallenge {
+  height: 150px;
+  width: 300px;
+  font-size: 15px;
+  border-width: 3px;
+  border: 2px solid #B67F33; border-radius: 2px;
+}
+.markChallenge > div {
+  margin-bottom: 5px;
+}
+
+#challInfo {
+  color: #B67F33; text-align: center; font-weight: bold;
+}
+
+#autobuyersLayer > div {
+  margin-top: 1%;
+  width: 100%;
+}
+
+#maxmizeAuto {
+  margin: 0.5vh 0 0 40vw;
+  width: 10vw; height: 3vh;
+}
+.smallerTxt {
+  font-size: 17px;
+}
+
+#incrNavContainer {
+  margin: 1vh auto 0 auto;
+  width: 24vw; height: 4vh;
+  text-align: center;
+}
+.incrNav {
+  display: block; float: left;
+  margin-right: 2vw; padding: 0.4vh 0 0.4vh 0;
+  width: 10vw; height: 3vh;
+  text-align: center; font-size: 1.6vh;
+  background-color: white;
+  border-radius: 2px;
+  border-color: #aaa;
+  border-width: 2px;
+}
+
+.ordAuto {
+  margin-top: 1vh;
+}
+.ordAuto > span {
+  display: block; float: left;
+  width: 20%; height: 5vh;
+  text-align: center; font-size: 2vh;
+}
+.ordAuto > span:first-child {
+  color: #888;
+}
+.ordAuto > button {
+  display: block;
+  width: 40%; height: 5vh;
+  text-align: center; font-size: 2vh;
+  background-color: white;
+  border-radius: 2px;
+  border-color: #aaa;
+  border-width: 2px;
+}
+
+.infUpgrade {
+  margin-top: 2px;
+}
+
+.treeButton {
+  font-family: sans-serif;
+  border-width:1.5px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  margin: center;
+  width: 200px;
+  height: 100px;
+  font-size: 18px
+}
+
+.center {
+  margin: auto;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+}
+
+#boostersText {
+  margin: auto;
+  text-align: center;
+  font-size: 20pt;
+  display: inline;
+  font-weight: bold;
+}
+
+#refundBoosters {
+  font-family: sans-serif;
+  color: #000000;
+  background: #FFFFFF;
+  border-radius: 2px;
+  border-color: #000000;
+  border-width:1.5px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  margin: auto;
+  font-size: 14pt
+}
+
+#refundConfirmation {
+  font-family: sans-serif;
+  color: #000000;
+  background: #FFFFFF;
+  border-radius: 2px;
+  border-color: #000000;
+  border-width:1.5px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  margin: auto;
+  font-size: 12pt
+}
+
+#refundFB {
+  font-family: sans-serif;
+  color: #000000;
+  background: #FFFFFF;
+  border-radius: 2px;
+  border-color: #000000;
+  border-width:1.5px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  margin: auto;
+  font-size: 12pt
+}
+
+#refundBoosters:hover {
+  background: #EFEFEF
+}
+
+.locked {
+  color: #000000;
+  background: #FFFFFF;
+  border-radius: 2px;
+  border-color: #000000;
+}
+
+.canbuy {
+  color: #0000FF;
+  background: #000000;
+  border-radius: 2px;
+  border-color: #0000FF;
+  transition-duration: 0.1s;
+}
+
+.canbuy:hover {
+  background: #008000;
+  color: #0000C0;
+}
+
+.bought {
+  color: #000000;
+  background: #00FF00;
+  border-radius: 2px;
+  border-color: #000000;
+}
+
+.boosterButton {
+  font-family: sans-serif;
+  color: #8080FF;
+  background: #000000;
+  border-radius: 2px;
+  border-color: #0000FF;
+  border-width:1.5px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  border: solid #0000FF
+}
+
+.boosterButton:hover {
+  background: #FFFFFF;
+  color: #000080;
+}
+
+.challenge {
+  height: 150px;
+  width: 300px;
+  font-size: 15px;
+  border-width: 3px;
+}
+
+.running {
+  background: #FFFFFF;
+  border-radius: 2px;
+  border-color: #000000;
+  color: #000080;
+}
+
+#finishChallenge {
+  height: 100px;
+  width: 200px;
+  font-size: 20px;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+invisible {
+  opacity: 0;
+}
+
+.collapseTabButton {
+  font-family: sans-serif;
+  color: lightgreen;
+  background: #000000;
+  border-radius: 5px;
+  border-weight: 10px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  width: 120px;
+  height: 40px;
+  font-size: 15pt;
+  font-weight: bold;
+  border: solid green
+}
+
+.collapseTabButton:hover {
+  background: green;
+  color: #FFFFFF;
+}
+
+.collapse {
+  font-family: sans-serif;
+  color: lightgreen;
+  background: black;
+  border-radius: 2px;
+  border-width:1.5px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  border: solid green
+}
+
+.collapse:hover {
+  background: green;
+  color: white;
+}
+
+#collapseScreen {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: black;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center
+}
+
+#collapseScreenText {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 100pt;
+  font-weight: bold;
+  font-family: Comic Sans MS, arial, sans-serif;
+  color: lightgreen;
+}
+
+#cardinalTable td {width: 30%; text-align: center;}
+
+.slugMile {
+  background: green;
+  border-color: #00FF00;
+  border-radius: 5px;
+  border-weight: 10px;
+}
+
+.notSlugMile {
+  background: grey;
+  border-color: #000000;
+  border-radius: 5px;
+  border-weight: 10px;
+}
+
+#slugTable td {
+  width: 150px;
+  font-family: sans-serif;
+  text-align: center;
+  color: white;
+  height: 150px;
+  display: inline-block;
+}
+
+#baseTable td {
+  width: 150px;
+  font-family: sans-serif;
+  text-align: center;
+  color: white;
+  height: 150px;
+  display: inline-block;
+}
+
+
+#slugTable tr:nth-child(1) td:nth-child(1) p {
+  font-size: 10pt;
+}
+
+#slugTable tr:nth-child(1) td:nth-child(2) p {
+  font-size: 11pt;
+}
+
+
+
+#slugTable tr:nth-child(1) td:nth-child(3) p {
+  font-size: 10pt;
+}
+
+#slugTable p {
+  margin: 5px;
+}
+
+.trueCenter {
+  margin: auto;
+  display: block;
+  text-align:center;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+
+.long {
+  width: 100%;
+}
+
+#alephOmegaUps {
+  margin: auto;
+  display: block;
+  text-align:center;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  width: 815px;
+}
+
+.assignButtons {
+  margin-bottom: calc(18px * 3);
+}
+
+#factorBoostProgBar {
+  width: 100%;
+  height: 20px;
+  background: #a0a0a0;
+}
+
+#factorBoostProg {
+  height: 20px;
+  background: #00ff00;
+  color: #000000;
+  text-align: center;
+  width: 50%;
+  font-size: 13pt;
+}
+
+.darkButton {
+  color: #ffffff;
+	background: #000;
+	border-width: 2px;
+  border-color: #808080;
+	border-radius: 2px;
+	transition-duration: 0.1s;
+	cursor: pointer;
+}
+
+.darkButton:hover {
+  border-color: transparent;
+  background: #000;
+}
+
+#subTab4 td button {font-size: 12pt}
+
+.singularity {
+  color: #FFF;
+	background: #000;
+	border-width: 2px;
+  border: solid green;
+	border-radius: 2px;
+	transition-duration: 0.1s;
+	cursor: pointer;
+}
+
+.singularity:hover {
+  border-color: transparent;
+  background: #000;
+}
+
+.singSacr {
+  font-family: sans-serif;
+  border-width:1.5px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  margin: center;
+  width: 200px;
+  height: 100px;
+  font-size: 18px
+}
+
+.thicc {
+  font-size: 2vh;
+  height: 6vh;
+}
+
+.singularityFunction {
+    border: 1px solid;
+    font-weight: bold;
+    font-family: sans-serif;
+    width: 170px;
+    height: 80px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    vertical-align: top;
+    text-align: center;
+    margin:7px;
+    display: block;
+}
+
+.unboughtthing {
+    color: #666;
+    border-color: #004000;
+}
+
+
+
+.boughtthing {
+    color: black;
+    background: #00FF00;
+}
+
+.canbought {
+    color: black;
+    background: green;
+}
+
+#functions {
+    color: #ffffff;
+	  background: radial-gradient(#333,#000);
+  	border-width: 2px;
+    border: solid green;
+	  border-radius: 2px;
+  	transition-duration: 0.1s;
+    position: fixed;
+    bottom: -2px;
+    left: 50%;
+    font-size: 15px;
+    height: 100px;
+    width: 500px;
+    transform: translateX(-50%);
+    border: solid green;
+    text-align: center;
+    font-size: 16pt;
+}
+
+#singTable td {width: 100px; text-align: center; vertical-align: bottom}
+
+#realCenter {
+  margin: auto;
+  display: block;
+  text-align:center;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+.unbought {
+    color: black;
+    background: lime;
+}
+
+.unbought:hover {
+    color: lime;
+    background: black;
+}
+
+.boughtthing:hover {
+    color: black;
+    background: #00FF00;
+}
+
+.pointer {
+  cursor: pointer;
+}
