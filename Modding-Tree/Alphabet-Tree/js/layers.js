@@ -79,7 +79,7 @@ for (var i = 0; i < 26; i++) {
             this.tempShown = 1;
             return true;
           }
-          for (var i = 25; i > ${i-1}; i--) {
+          for (var i = 25; i > ${i-2}; i--) {
             for (var j = 0; j < layerNodes[i]; j++) {
               if (player[(i+10).toString(36).toUpperCase() + j].points.gt(0)) {
                 return true;
