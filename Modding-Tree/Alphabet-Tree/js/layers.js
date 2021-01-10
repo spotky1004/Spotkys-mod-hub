@@ -43,7 +43,7 @@ for (var i = 0; i < 26; i++) {
   for (var j = 0; j < stageNodes; j++) {
     var seed = i+j;
     var branch = seed%prevNodes;
-    var req = D(10).mul((i+1)**2).pow((i >= 5 ? i/2+1 : 1)).pow((i >= 10 ? i/4+1 : 1)).div(4);
+    var req = D(10).mul((i+1)**2).pow((i >= 5 ? i/2+1 : 1)).pow((i >= 10 ? i+1 : 1)).div(4);
     addLayer(`${layerAlpha}${j}`, {
       name: `${layerAlpha}${smallNumber(j+1)}`, // This is optional, only used in a few places, If absent it just uses the layer id.
       symbol: `${layerAlpha}${smallNumber(j+1)}`, // This appears on the layer's node. Default is the id with the first letter capitalized
