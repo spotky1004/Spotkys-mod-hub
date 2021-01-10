@@ -33,6 +33,8 @@ let changelog =
 		- Fix number bug<br>
 		<h3>v0.5</h3><br>
 		- Fix number bug<br>
+		<h3>v0.6</h3><br>
+		- Made easisr to get Points<br>
 	`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
