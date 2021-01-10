@@ -31,6 +31,8 @@ let changelog =
 		- Allows to see next layer<br>
 		<h3>v0.4</h3><br>
 		- Fix number bug<br>
+		<h3>v0.5</h3><br>
+		- Fix number bug<br>
 	`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
