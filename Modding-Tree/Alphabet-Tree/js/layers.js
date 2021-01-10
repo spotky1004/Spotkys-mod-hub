@@ -135,3 +135,126 @@ for (var i = 0; i < 26; i++) {
   }
   prevNodes = stageNodes;
 }
+
+addLayer("a", {
+  startData() { return {
+    unlocked: true,
+	   points: new Decimal(0),
+  }},
+  color: "yellow",
+  resource: "achievement power",
+  row: "side",
+  tooltip() { // Optional, tooltip displays when the layer is locked
+    return ("Achievements")
+  },
+  achievementPopups: true,
+  achievements: {
+    rows: 3,
+    cols: 5,
+    11: {
+      image: "./Achievements/a1.png",
+      name: "Prestige A₁!",
+      done() {return player['A0'].points.gt(0)},
+      goalTooltip: "Go A₁",
+      doneTooltip: "Go A₁",
+    },
+    12: {
+      image: "./Achievements/a2.png",
+      name: "Prestige B₁!",
+      done() {return player['B0'].points.gt(0)},
+      goalTooltip: "Go B₁",
+      doneTooltip: "Go B₁",
+    },
+    13: {
+      image: "./Achievements/a3.png",
+      name: "Prestige C₁!",
+      done() {return player['C0'].points.gt(0)},
+      goalTooltip: "Go C₁",
+      doneTooltip: "Go C₁",
+    },
+    14: {
+      image: "./Achievements/a4.png",
+      name: "Prestige D₁!",
+      done() {return player['D0'].points.gt(0)},
+      goalTooltip: "Go D₁",
+      doneTooltip: "Go D₁",
+    },
+    15: {
+      image: "./Achievements/a5.png",
+      name: "Prestige E₁!",
+      done() {return player['E0'].points.gt(0)},
+      goalTooltip: "Go E₁",
+      doneTooltip: "Go E₁",
+    },
+    21: {
+      image: "./Achievements/a6.png",
+      name: "Prestige G₁!",
+      done() {return player['G0'].points.gt(0)},
+      goalTooltip: "Go G₁",
+      doneTooltip: "Go G₁",
+    },
+    22: {
+      image: "./Achievements/a7.png",
+      name: "Prestige I₁!",
+      done() {return player['I0'].points.gt(0)},
+      goalTooltip: "Go I₁",
+      doneTooltip: "Go I₁",
+    },
+    23: {
+      image: "./Achievements/a8.png",
+      name: "Prestige K₁!",
+      done() {return player['K0'].points.gt(0)},
+      goalTooltip: "Go K₁",
+      doneTooltip: "Go K₁",
+    },
+    24: {
+      image: "./Achievements/a9.png",
+      name: "Prestige M₁!",
+      done() {return player['M0'].points.gt(0)},
+      goalTooltip: "Go M₁",
+      doneTooltip: "Go M₁",
+    },
+    25: {
+      image: "./Achievements/a10.png",
+      name: "Prestige O₁!",
+      done() {return player['O0'].points.gt(0)},
+      goalTooltip: "Go O₁",
+      doneTooltip: "Go O₁",
+    },
+    31: {
+      image: "./Achievements/a11.png",
+      name: "Prestige R₁!",
+      done() {return player['R0'].points.gt(0)},
+      goalTooltip: "Go R₁",
+      doneTooltip: "Go R₁",
+    },
+    32: {
+      image: "./Achievements/a12.png",
+      name: "Prestige U₁!",
+      done() {return player['U0'].points.gt(0)},
+      goalTooltip: "Go U₁",
+      doneTooltip: "Go U₁",
+    },
+    33: {
+      image: "./Achievements/a13.png",
+      name: "Prestige X₁!",
+      done() {return player['X0'].points.gt(0)},
+      goalTooltip: "Go X₁",
+      doneTooltip: "Go X₁",
+    },
+    34: {
+      image: "./Achievements/a14.png",
+      name: "Prestige Y₁!",
+      done() {return player['Y0'].points.gt(0)},
+      goalTooltip: "Go Y₁",
+      doneTooltip: "Go Y₁",
+    },
+    35: {
+      image: "./Achievements/a15.png",
+      name: "Prestige Z₁!",
+      done() {return player['Z0'].points.gt(0)},
+      goalTooltip: "Go Z₁",
+      doneTooltip: "Go Z₁",
+    },
+  },
+});

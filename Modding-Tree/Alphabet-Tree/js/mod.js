@@ -14,27 +14,29 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
+	num: "0.6",
 	name: "Test",
 }
 
 let changelog =
 	`
 		<h1>Changelog:</h1><br>
-		<h3>v0.0</h3><br>
+		<h3>v0.0.0</h3><br>
 		- First Relase<br>
-		<h3>v0.1</h3><br>
+		<h3>v0.0.1</h3><br>
 		- Better balance<br>
-		<h3>v0.2</h3><br>
+		<h3>v0.0.2</h3><br>
 		- Fix NaN bug<br>
-		<h3>v0.3</h3><br>
+		<h3>v0.0.3</h3><br>
 		- Allows to see next layer<br>
-		<h3>v0.4</h3><br>
+		<h3>v0.0.4</h3><br>
 		- Fix number bug<br>
-		<h3>v0.5</h3><br>
+		<h3>v0.0.5</h3><br>
 		- Fix number bug<br>
-		<h3>v0.6</h3><br>
+		<h3>v0.0.6</h3><br>
 		- Made easisr to get Points<br>
+		<h3>v0.1.0</h3><br>
+		- Added Achievements tab<br>
 	`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
