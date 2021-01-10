@@ -18,9 +18,14 @@ let VERSION = {
 	name: "Test",
 }
 
-let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0</h3><br>
-		- First Relase`
+let changelog =
+	`
+		<h1>Changelog:</h1><br>
+		<h3>v0.0</h3><br>
+			- First Relase<br>
+		<h3>v0.1</h3><br>
+			- Better balance<br>
+	`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
