@@ -52,7 +52,7 @@ for (var i = 0; i < 26; i++) {
     	  points: new Decimal(0),
       }},
       color: hsvToRgb(i/25, 0.35+j/10+i/200, 0.4+j/20+i/400),
-      requires: D(10).mul((i >= 5 ? i : 1)).pow((i >= 10 ? i/4+1 : 1)),
+      requires: D(10).mul(i**2).pow((i >= 5 ? i/2+1 : 1)).pow((i >= 10 ? i/4+1 : 1)),
       branches: (i ? [`${(i+9).toString(36).toUpperCase()}${branch}`] : undefined),
       resource: `${layerAlpha}${smallNumber(j+1)} Points`, // Name of prestige currency
       baseResource: (i ? `${(i+9).toString(36).toUpperCase()}${smallNumber(branch+1)} Points` : 'points'), // Name of resource prestige is based on
