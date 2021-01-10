@@ -57,7 +57,7 @@ for (var i = 0; i < 26; i++) {
       resource: `${layerAlpha}${smallNumber(j+1)} Points`, // Name of prestige currency
       baseResource: (i ? `${(i+9).toString(36).toUpperCase()}${smallNumber(branch+1)} Points` : 'points'), // Name of resource prestige is based on
       type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-      exponent: 0.5/stageNodes, // Prestige currency exponent
+      exponent: 0.5/stageNodes/(i+1)**0.2, // Prestige currency exponent
       gainMult: new Function(
         `
           var mult = D(1);
