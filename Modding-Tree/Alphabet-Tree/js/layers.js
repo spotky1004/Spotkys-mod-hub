@@ -109,17 +109,17 @@ for (var i = 0; i < 26; i++) {
               return player[this.layer].best.gte(D('${req.valueOf()}').pow(5).mul(1e18).mul(D(10).pow(${seed+1}**2)));
             `
           ),
-          effectDescription: `Gain 5% of ${layerAlpha}${smallNumber(j+1)} Reset reward per second`,
+          effectDescription: `Gain ${100*0.9**i}% of ${layerAlpha}${smallNumber(j+1)} Reset reward per second`,
         },
       },
 
       effectDescription() {
         eff = player[this.layer].points.add(1);
-        return "which are giving a " + format(eff) + "× boost to the previous layer gain."
+        return "\nwhich are giving a " + format(eff) + "× boost to the previous layer gain."
       },
 
       passiveGeneration() {
-        return hasMilestone(this.layer, 0) ? 0.05 : 0;
+        return hasMilestone(this.layer, 0) ? 1*0.9**this.row : 0;
       }
     })
     if (i) {
