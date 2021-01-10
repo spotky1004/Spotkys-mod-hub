@@ -116,7 +116,7 @@ for (var i = 0; i < 26; i++) {
       var tempMul = D(i).sub(2).pow(2).add(3).add(seed);
       layers[`${layerAlpha}${j}`].upgrades[tempUpgNum] = {
         title: "Point Boost",
-        description: `Multiply Point gain by ${tempMul.valueOf()}`,
+        description: `Multiply Point gain by ${format(tempMul.valueOf())}`,
         cost: new Decimal(10).pow(D(i).sub(1).pow(0.5)).mul(seed/10+1)
       }
       pointBoosts.push({layer: `${layerAlpha}${j}`, num: tempUpgNum, mult: tempMul});
@@ -127,7 +127,7 @@ for (var i = 0; i < 26; i++) {
       var tempMul = D(i).sub(2).pow(2).add(3).add(seed).pow(i-1);
       layers[`${layerAlpha}${j}`].upgrades[tempUpgNum] = {
         title: "Point Boost II",
-        description: `Multiply Point gain by ${tempMul.valueOf()}`,
+        description: `Multiply Point gain by ${format(tempMul.valueOf())}`,
         cost: new Decimal(10).pow(D(i).sub(1).pow(0.5)).pow(i)
       }
       pointBoosts.push({layer: `${layerAlpha}${j}`, num: tempUpgNum, mult: tempMul});
