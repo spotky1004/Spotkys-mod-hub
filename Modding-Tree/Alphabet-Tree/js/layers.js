@@ -103,10 +103,10 @@ for (var i = 0; i < 26; i++) {
 
       milestones: {
         0: {
-          requirementDescription: `Collect ${req.pow(5).mul(1e18).mul(D(10).pow((seed+1)**2)).toExponential(3).replace('+', '')} ${layerAlpha}${smallNumber(j+1)}`,
+          requirementDescription: `Collect ${req.pow(5).mul(1e13).mul(D(10).pow((seed+1)**2)).toExponential(3).replace('+', '')} ${layerAlpha}${smallNumber(j+1)}`,
           done: new Function(
             `
-              return player[this.layer].best.gte(D('${req.valueOf()}').pow(5).mul(1e18).mul(D(10).pow(${seed+1}**2)));
+              return player[this.layer].best.gte(D('${req.valueOf()}').pow(5).mul(1e13).mul(D(10).pow(${seed+1}**2)));
             `
           ),
           effectDescription: `Gain ${100*0.9**i}% of ${layerAlpha}${smallNumber(j+1)} Reset reward per second`,
@@ -285,4 +285,9 @@ addLayer("a", {
       doneTooltip: "Go Z₁",
     },
   },
+  hotkeys: [
+    {key: 'a', description: "Up/Down: Move layer tier", onPress(){}},
+    {key: 'b', description: "Right/Left: Move layer in same tier", onPress(){}},
+    {key: 'c', description: "R: Reset", onPress(){}},
+  ],
 });

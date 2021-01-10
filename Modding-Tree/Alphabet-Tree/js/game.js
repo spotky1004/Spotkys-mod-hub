@@ -388,6 +388,65 @@ function hardReset() {
 	window.location.reload();
 }
 
+var keypress = {};
+document.addEventListener('keydown', keyDown);
+document.addEventListener('keyup', keyUp);
+function keyDown(e) {
+  keypress[e.keyCode] = true;
+
+	switch (e.keyCode) {
+		// up arrow
+		case 38:
+		var alpha = player.tab.replace(/(\w+)(\d+)/g, function(match, p1){return (Number(parseInt(p1, 36))-1).toString(36).toUpperCase()});
+		if (alpha == '9') return;
+		document.getElementById(alpha + '0').click();
+			break;
+
+		// down arrow
+		case 40:
+		var prev = player.tab;
+		var alpha = player.tab.replace(/(\w+)(\d+)/g, function(match, p1){return (Number(parseInt(p1, 36))+1).toString(36).toUpperCase()});
+		for (var i = layerNodes[parseInt(alpha, 36)-10]-1; i > -1; i--) {
+			document.getElementById(alpha + i).click();
+		}
+			break;
+
+		// left arrow
+		case 37:
+		var prev = player.tab;
+		var alpha = player.tab.replace(/(\w+)(\d+)/g, function(match, p1){return (Number(parseInt(p1, 36))).toString(36).toUpperCase()});
+		var num = player.tab.replace(/(\w+)(\d+)/g, function(match, p1, p2){return Number(p2)+1});
+		try {
+			document.getElementById(alpha + num).click();
+		} catch (e) {
+
+		}
+			break;
+
+		case 39:
+		var prev = player.tab;
+		var alpha = player.tab.replace(/(\w+)(\d+)/g, function(match, p1){return (Number(parseInt(p1, 36))).toString(36).toUpperCase()});
+		var num = player.tab.replace(/(\w+)(\d+)/g, function(match, p1, p2){return Number(p2)-1});
+		try {
+			document.getElementById(alpha + num).click();
+		} catch (e) {
+
+		}
+			break;
+
+		// 'r'
+		case 82:
+		if (layers[player.tab].canReset()) {
+			doReset(player.tab);
+		}
+			break;
+		default:
+	}
+}
+function keyUp(e) {
+  keypress[e.keyCode] = false;
+}
+
 var ticking = false
 
 var interval = setInterval(function() {
