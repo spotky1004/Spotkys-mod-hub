@@ -14,8 +14,8 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.6",
-	name: "Test",
+	num: "0.2.0",
+	name: "no desc",
 }
 
 let changelog =
@@ -37,6 +37,8 @@ let changelog =
 		- Made easisr to get Points<br>
 		<h3>v0.1.0</h3><br>
 		- Added Achievements tab<br>
+		<h3>v0.2.0</h3><br>
+		- Added Passive Gen (Milestone 1's)<br>
 	`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
@@ -79,7 +81,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e28000000000000"))
+	return player.points.gte(new Decimal("e1004000000000000000"))
 }
 
 

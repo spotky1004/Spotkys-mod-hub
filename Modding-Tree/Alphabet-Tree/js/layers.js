@@ -43,6 +43,7 @@ for (var i = 0; i < 26; i++) {
   for (var j = 0; j < stageNodes; j++) {
     var seed = i+j;
     var branch = seed%prevNodes;
+    var req = D(10).mul((i+1)**2).pow((i >= 5 ? i/2+1 : 1)).pow((i >= 10 ? i/4+1 : 1)).div(4);
     addLayer(`${layerAlpha}${j}`, {
       name: `${layerAlpha}${smallNumber(j+1)}`, // This is optional, only used in a few places, If absent it just uses the layer id.
       symbol: `${layerAlpha}${smallNumber(j+1)}`, // This appears on the layer's node. Default is the id with the first letter capitalized
@@ -52,7 +53,7 @@ for (var i = 0; i < 26; i++) {
     	  points: new Decimal(0),
       }},
       color: hsvToRgb(i/25, 0.35+j/10+i/200, 0.4+j/20+i/400),
-      requires: D(10).mul((i+1)**2).pow((i >= 5 ? i/2+1 : 1)).pow((i >= 10 ? i/4+1 : 1)).div(4),
+      requires: req,
       branches: (i ? [`${(i+9).toString(36).toUpperCase()}${branch}`] : undefined),
       resource: `${layerAlpha}${smallNumber(j+1)} Points`, // Name of prestige currency
       baseResource: (i ? `${(i+9).toString(36).toUpperCase()}${smallNumber(branch+1)} Points` : 'points'), // Name of resource prestige is based on
@@ -93,6 +94,33 @@ for (var i = 0; i < 26; i++) {
       canReset() {
         return this.baseAmount().gte(this.requires);
       },
+
+      doReset(resettingLayer) {
+        if(layers[resettingLayer].row > this.row) {
+          layerDataReset(this.layer, ['milestones'])
+        }
+      },
+
+      milestones: {
+        0: {
+          requirementDescription: `Collect ${req.pow(5).mul(1e18).mul(D(10).pow((seed+1)**2)).toExponential(3).replace('+', '')} ${layerAlpha}${smallNumber(j+1)}`,
+          done: new Function(
+            `
+              return player[this.layer].best.gte(D('${req.valueOf()}').pow(5).mul(1e18).mul(D(10).pow(${seed+1}**2)));
+            `
+          ),
+          effectDescription: `Gain 5% of ${layerAlpha}${smallNumber(j+1)} Reset reward per second`,
+        },
+      },
+
+      effectDescription() {
+        eff = player[this.layer].points.add(1);
+        return "which are giving a " + format(eff) + "× boost to the previous layer gain."
+      },
+
+      passiveGeneration() {
+        return hasMilestone(this.layer, 0) ? 0.05 : 0;
+      }
     })
     if (i) {
       layers[`${layerAlpha}${j}`].baseAmount = new Function(
