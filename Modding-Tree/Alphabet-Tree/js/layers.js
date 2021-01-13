@@ -23,8 +23,17 @@ function hsvToRgb(h, s, v) {
   }
   return '#' + Math.floor(r*255).toString(16).padStart(2, Math.floor(r*255).toString(16)) + Math.floor(g*255).toString(16).padStart(2, Math.floor(g*255).toString(16)) + Math.floor(b*255).toString(16).padStart(2, Math.floor(b*255).toString(16));
 }
+function alphaToNum(char) {
+  return parseInt(char, 36)-10;
+}
+function numToAlpha(num) {
+  return (num+10).toString(36).toUpperCase();
+}
+function getSeed(layerName) {
+  return alphaToNum(layerName[0])+Number(layerName[1]);
+}
 
-var prevNodes = 0, nextNodes = 0, layerNodes = [], pointBoosts = [];
+var prevNodes = 0, nextNodes = 0, layerNodes = [], pointBoosts = [], resBoosts1 = {};
 for (var i = 0; i < 26; i++) {
   var layerAlpha = (i+10).toString(36).toUpperCase();
 
@@ -49,25 +58,30 @@ for (var i = 0; i < 26; i++) {
       symbol: `${layerAlpha}${smallNumber(j+1)}`, // This appears on the layer's node. Default is the id with the first letter capitalized
       position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
       startData() { return {
-        unlocked: (i ? false : true),
+        unlocked: !i,
     	  points: new Decimal(0),
       }},
       color: hsvToRgb(i/25, 0.35+j/10+i/200, 0.4+j/20+i/400),
       requires: req,
+      resetsNothing: function() {return hasMilestone(this.layer, 1)},
       branches: (i ? [`${(i+9).toString(36).toUpperCase()}${branch}`] : undefined),
       resource: `${layerAlpha}${smallNumber(j+1)} Points`, // Name of prestige currency
       baseResource: (i ? `${(i+9).toString(36).toUpperCase()}${smallNumber(branch+1)} Points` : 'points'), // Name of resource prestige is based on
       type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
       exponent: 0.5/stageNodes/(i+1)**0.2, // Prestige currency exponent
-      gainMult: new Function(
-        `
-          var mult = D(1);
-          for (var i = 0; i < ${nextNodes}; i++) {
-            mult = mult.mul(player['${(i+11).toString(36).toUpperCase()}' + i].points.add(1));
+      gainMult: function() {
+        var layerOrd = alphaToNum(this.layer[0]);
+        var mult = D(1);
+        for (var i = 0; i < layerNodes[layerOrd+1]; i++) {
+          mult = mult.mul(player[numToAlpha(layerOrd+1) + i].points.add(1));
+        }
+        if (typeof resBoosts1[this.layer] != "undefined") {
+          if (hasUpgrade(this.layer, resBoosts1[this.layer].num)) {
+            mult = mult.mul(1e100)
           }
-          return mult;
-        `
-      ),
+        };
+        return mult;
+      },
       gainExp() { // Calculate the exponent on main currency from bonuses
           return new Decimal(1)
       },
@@ -96,9 +110,9 @@ for (var i = 0; i < 26; i++) {
       },
 
       doReset(resettingLayer) {
-        if(layers[resettingLayer].row > this.row) {
+        if (layers[resettingLayer].row > this.row) {
           var noneReset = ['milestones'];
-          if (hasMilestone('E0', 1)) noneReset.push('upgrades');
+          if (hasMilestone('E0', 2)) noneReset.push('upgrades');
           layerDataReset(this.layer, noneReset)
         }
       },
@@ -112,6 +126,11 @@ for (var i = 0; i < 26; i++) {
             `
           ),
           effectDescription: `Gain ${(100*0.9**i).toFixed(2)}% of ${layerAlpha}${smallNumber(j+1)} Reset reward per second`,
+        },
+        1: {
+          requirementDescription: `Collect e10,000,000 ${layerAlpha}${smallNumber(j+1)}`,
+          done: () => {return player[this.layer].best.gte(D('1e10000000'))},
+          effectDescription: `Keep ^0.1 of resource of this layer on reset`,
         },
       },
 
@@ -146,7 +165,7 @@ for (var i = 0; i < 26; i++) {
       var tempMul = D(i).sub(2).pow(2).add(3).add(seed);
       layers[`${layerAlpha}${j}`].upgrades[tempUpgNum] = {
         title: "Point Boost",
-        description: `Multiply Point gain by ${tempMul.toFixed(0)}`,
+        description: () => {return `Multiply Point gain by x${exponentialFormat(D(alphaToNum(player.tab[0])).sub(2).pow(2).add(3).add(getSeed(player.tab)), 2)}`},
         cost: new Decimal(10).pow(D(i).sub(1).pow(0.5)).mul(seed/10+1)
       }
       pointBoosts.push({layer: `${layerAlpha}${j}`, num: tempUpgNum, mult: tempMul});
@@ -157,16 +176,27 @@ for (var i = 0; i < 26; i++) {
       var tempMul = D(i).sub(2).pow(2).add(3).add(seed).pow(i-1);
       layers[`${layerAlpha}${j}`].upgrades[tempUpgNum] = {
         title: "Point Boost II",
-        description: `Multiply Point gain by ${tempMul.toFixed(0)}`,
+        description: () => {return `Multiply Point gain by x${exponentialFormat(D(alphaToNum(player.tab[0])).sub(2).pow(2).add(3).add(getSeed(player.tab)).pow(i-1), 2)}`},
         cost: new Decimal(10).pow(D(i).sub(1).pow(0.5)).pow(i)
       }
       pointBoosts.push({layer: `${layerAlpha}${j}`, num: tempUpgNum, mult: tempMul});
+    }
+    if (i >= 12 && (seed%2 == 0 || i == 12)) {
+      layers[`${layerAlpha}${j}`].upgrades.cols++;
+      tempUpgNum++;
+      var tempMul = D(1e100);
+      layers[`${layerAlpha}${j}`].upgrades[tempUpgNum] = {
+        title: "Resource Boost",
+        description: () => {return `Multiply Resource gain of this layer by x${exponentialFormat(D(1e100))}`},
+        cost: new Decimal('1e1500').mul(D(10+i).pow((i+seed-30)*20))
+      }
+      resBoosts1[`${layerAlpha}${j}`] = ({num: tempUpgNum});
     }
   }
   prevNodes = stageNodes;
 }
 
-layers[`E0`].milestones[1] = {
+layers[`E0`].milestones[Object.keys(layers[`E0`].milestones).length] = {
   requirementDescription: `Collect 1.797e308 E₁`,
   done: function() {return player[this.layer].best.gte('1.797e308')},
   effectDescription: `Keep all upgrade on any layer upon reset!`,

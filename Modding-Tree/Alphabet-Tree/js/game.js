@@ -177,6 +177,7 @@ function generatePoints(layer, diff) {
 var prevOnReset
 
 function doReset(layer, force=false) {
+	tempPlayer = JSON.parse(JSON.stringify(player));
 	if (tmp[layer].type == "none") return
 	let row = tmp[layer].row
 	if (!force) {
@@ -229,6 +230,10 @@ function doReset(layer, force=false) {
 
 	updateTemp()
 	updateTemp()
+
+	for (var i in layers) {
+		if (hasMilestone(i, 1)) player[i].points = D(tempPlayer[i].points).pow(0.1);
+	}
 }
 
 function resetRow(row) {
