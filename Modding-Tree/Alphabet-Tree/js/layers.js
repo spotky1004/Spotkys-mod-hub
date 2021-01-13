@@ -130,7 +130,7 @@ for (var i = 0; i < 26; i++) {
         1: {
           requirementDescription: `Collect e10,000,000 ${layerAlpha}${smallNumber(j+1)}`,
           done: () => {return player[this.layer].best.gte(D('1e10000000'))},
-          effectDescription: `Keep ^0.1 of resource of this layer on reset`,
+          effectDescription: `Keep ^0.01 of resource of this layer on reset`,
         },
       },
 

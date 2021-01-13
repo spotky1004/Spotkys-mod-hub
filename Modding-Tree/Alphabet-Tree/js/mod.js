@@ -48,7 +48,7 @@ let changelog =
 		<h3>v0.4.1</h3><br>
 		- Temporary reduced P or highter layer req by 1e10 <br>
 		<h3>v0.5.0</h3><br>
-		- Added new Milestone for all layers: Keep ^0.1 of resource of this layer on reset <br>
+		- Added new Milestone for all layers: Keep ^0.01 of resource of this layer on reset <br>
 		- Added new Upgrade: Multiply Resource gain of this layer by x1e100 <br>
 	`
 
