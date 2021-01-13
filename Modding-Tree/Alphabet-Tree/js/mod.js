@@ -14,7 +14,7 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.4.0",
+	num: "0.4.1",
 	name: "no desc",
 }
 
@@ -45,6 +45,8 @@ let changelog =
 		- Added Hotkeys<br>
 		<h3>v0.4.0</h3><br>
 		- Added E1 Milestone (keep all upgrades)<br>
+		<h3>v0.4.1</h3><br>
+		- Temporary reduced P or highter layer req by 1e10 <br>
 	`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
