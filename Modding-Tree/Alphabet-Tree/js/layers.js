@@ -33,7 +33,7 @@ function getSeed(layerName) {
   return alphaToNum(layerName[0])+Number(layerName[1]);
 }
 
-var prevNodes = 0, nextNodes = 0, layerNodes = [], pointBoosts = [], resBoosts1 = {};
+var prevNodes = 0, nextNodes = 0, layerNodes = [], pointBoosts = [], resBoosts1 = {}, pointBoosts2 = [];
 for (var i = 0; i < 26; i++) {
   var layerAlpha = (i+10).toString(36).toUpperCase();
 
@@ -191,6 +191,17 @@ for (var i = 0; i < 26; i++) {
         cost: new Decimal('1e1500').mul(D(10+i).pow((i+seed-30)*20))
       }
       resBoosts1[`${layerAlpha}${j}`] = ({num: tempUpgNum});
+    }
+    if (i >= 14 && (seed%2 == 1 || i == 14)) {
+      layers[`${layerAlpha}${j}`].upgrades.cols++;
+      tempUpgNum++;
+      var tempMul = D(1.1);
+      layers[`${layerAlpha}${j}`].upgrades[tempUpgNum] = {
+        title: "Point Boost III",
+        description: () => {return `Make point gain ^${exponentialFormat(1.1, 1)}`},
+        cost: new Decimal('1e50').mul(D(seed).pow(seed*2))
+      }
+      pointBoosts2.push({layer: `${layerAlpha}${j}`, num: tempUpgNum, pow: tempMul});
     }
   }
   prevNodes = stageNodes;

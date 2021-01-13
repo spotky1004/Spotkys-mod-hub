@@ -14,7 +14,7 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.4.1",
+	num: "0.6.0",
 	name: "no desc",
 }
 
@@ -50,6 +50,8 @@ let changelog =
 		<h3>v0.5.0</h3><br>
 		- Added new Milestone for all layers: Keep ^0.01 of resource of this layer on reset <br>
 		- Added new Upgrade: Multiply Resource gain of this layer by x1e100 <br>
+		<h3>v0.6.0</h3><br>
+		- Added new Upgrade: Make point gain ^1.1 <br>
 	`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
@@ -77,6 +79,11 @@ function getPointGen() {
 	for (var i = 0; i < pointBoosts.length; i++) {
 		if (hasUpgrade(pointBoosts[i].layer, pointBoosts[i].num)) {
 			gain = gain.mul(pointBoosts[i].mult);
+		}
+	}
+	for (var i = 0; i < pointBoosts2.length; i++) {
+		if (hasUpgrade(pointBoosts2[i].layer, pointBoosts2[i].num)) {
+			gain = gain.pow(pointBoosts2[i].pow);
 		}
 	}
 	return gain
