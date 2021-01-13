@@ -423,6 +423,7 @@ function keyDown(e) {
 		}
 			break;
 
+		// right arrow
 		case 39:
 		var prev = player.tab;
 		var alpha = player.tab.replace(/(\w+)(\d+)/g, function(match, p1){return (Number(parseInt(p1, 36))).toString(36).toUpperCase()});

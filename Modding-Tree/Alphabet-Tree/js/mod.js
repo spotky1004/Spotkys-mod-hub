@@ -14,7 +14,7 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.3.0",
+	num: "0.4.0",
 	name: "no desc",
 }
 
@@ -43,6 +43,8 @@ let changelog =
 		- Buff milestone 1<br>
 		<h3>v0.3.0</h3><br>
 		- Added Hotkeys<br>
+		<h3>v0.4.0</h3><br>
+		- Added E1 Milestone (keep all upgrades)<br>
 	`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`

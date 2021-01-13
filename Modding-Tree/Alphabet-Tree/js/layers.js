@@ -97,7 +97,9 @@ for (var i = 0; i < 26; i++) {
 
       doReset(resettingLayer) {
         if(layers[resettingLayer].row > this.row) {
-          layerDataReset(this.layer, ['milestones'])
+          var noneReset = ['milestones'];
+          if (hasMilestone('E0', 1)) noneReset.push('upgrades');
+          layerDataReset(this.layer, noneReset)
         }
       },
 
@@ -163,6 +165,13 @@ for (var i = 0; i < 26; i++) {
   }
   prevNodes = stageNodes;
 }
+
+layers[`E0`].milestones[1] = {
+  requirementDescription: `Collect 1.797e308 E₁`,
+  done: function() {return player[this.layer].best.gte('1.797e308')},
+  effectDescription: `Keep all upgrade on any layer upon reset!`,
+}
+
 
 addLayer("a", {
   startData() { return {
