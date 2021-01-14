@@ -33,7 +33,7 @@ function getSeed(layerName) {
   return alphaToNum(layerName[0])+Number(layerName[1]);
 }
 
-var prevNodes = 0, nextNodes = 0, layerNodes = [], pointBoosts = [], resBoosts1 = {}, pointBoosts2 = [];
+var prevNodes = 0, nextNodes = 0, layerNodes = [], pointBoosts = [], resBoosts1 = {}, pointBoosts2 = [], c1Line = new Array(14).fill(0);
 for (var i = 0; i < 26; i++) {
   var layerAlpha = (i+10).toString(36).toUpperCase();
 
@@ -52,7 +52,7 @@ for (var i = 0; i < 26; i++) {
   for (var j = 0; j < stageNodes; j++) {
     var seed = i+j;
     var branch = seed%prevNodes;
-    var req = D(10).mul((i+1)**2).pow((i >= 5 ? i/2+1 : 1)).pow((i >= 10 ? i+1 : 1)).div(4).div(i>15?1e10:1);
+    var req = D(10).mul((i+1)**2).pow((i >= 5 ? i/2+1 : 1)).pow((i >= 10 ? i+1 : 1)).div(4).div(i>15?D(1e10).pow(i-14):1);
     addLayer(`${layerAlpha}${j}`, {
       name: `${layerAlpha}${smallNumber(j+1)}`, // This is optional, only used in a few places, If absent it just uses the layer id.
       symbol: `${layerAlpha}${smallNumber(j+1)}`, // This appears on the layer's node. Default is the id with the first letter capitalized
@@ -69,9 +69,10 @@ for (var i = 0; i < 26; i++) {
       baseResource: (i ? `${(i+9).toString(36).toUpperCase()}${smallNumber(branch+1)} Points` : 'points'), // Name of resource prestige is based on
       type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
       exponent: 0.5/stageNodes/(i+1)**0.2, // Prestige currency exponent
-      gainMult: function() {
+      gainMult() {
         var layerOrd = alphaToNum(this.layer[0]);
         var mult = D(1);
+
         for (var i = 0; i < layerNodes[layerOrd+1]; i++) {
           mult = mult.mul(player[numToAlpha(layerOrd+1) + i].points.add(1));
         }
@@ -79,12 +80,19 @@ for (var i = 0; i < 26; i++) {
           if (hasUpgrade(this.layer, resBoosts1[this.layer].num)) {
             mult = mult.mul(1e100)
           }
-        };
+        }
+
         return mult;
       },
-      gainExp() { // Calculate the exponent on main currency from bonuses
-          return new Decimal(1)
+      gainExp() {
+        var layerOrd = alphaToNum(this.layer[0]);
+        var exp = D(1);
+
+        if (layerOrd >= 14 && hasChallenge(this.layer[0] + c1Line[layerOrd], 11)) exp = exp.mul(1.3);
+
+        return exp;
       },
+
       row: i, // Row the layer is in on the tree (0 is the first row)
 
       tempShown: 0,
@@ -111,7 +119,7 @@ for (var i = 0; i < 26; i++) {
 
       doReset(resettingLayer) {
         if (layers[resettingLayer].row > this.row) {
-          var noneReset = ['milestones'];
+          var noneReset = ['milestones', 'challenges'];
           if (hasMilestone('E0', 2)) noneReset.push('upgrades');
           layerDataReset(this.layer, noneReset)
         }
@@ -140,6 +148,10 @@ for (var i = 0; i < 26; i++) {
       },
 
       passiveGeneration() {
+        for (var i in layers) {
+          if (isNaN(Number(i[1]))) continue;
+          if (inChallenge(i, 11)) return 0;
+        }
         return hasMilestone(this.layer, 0) ? 1*0.9**this.row : 0;
       }
     })
@@ -192,16 +204,34 @@ for (var i = 0; i < 26; i++) {
       }
       resBoosts1[`${layerAlpha}${j}`] = ({num: tempUpgNum});
     }
-    if (i >= 14 && (seed%2 == 1 || i == 14)) {
+    if (i >= 15 && (seed%4 == 0 || i == 15)) {
       layers[`${layerAlpha}${j}`].upgrades.cols++;
       tempUpgNum++;
-      var tempMul = D(1.1);
+      var tempMul = D(1.2).add(seed/100);
       layers[`${layerAlpha}${j}`].upgrades[tempUpgNum] = {
         title: "Point Boost III",
-        description: () => {return `Make point gain ^${exponentialFormat(1.1, 1)}`},
+        description: () => {return `Make point gain ^${exponentialFormat(1.35+getSeed(player.tab)/100, 2)}`},
         cost: new Decimal('1e50').mul(D(seed).pow(seed*2))
       }
       pointBoosts2.push({layer: `${layerAlpha}${j}`, num: tempUpgNum, pow: tempMul});
+    }
+
+    var tempChallNum = 10;
+    layers[`${layerAlpha}${j}`].challenges = {
+      rows: 1,
+      cols: 0,
+    }
+    if (i >= 14 && seed%stageNodes == 0) {
+      layers[`${layerAlpha}${j}`].challenges.cols++;
+      tempChallNum++;
+      layers[`${layerAlpha}${j}`].challenges[tempChallNum] = {
+        name: "Challenge I",
+        challengeDescription: "Passive gain is disabled",
+        rewardDescription : `Raise ${layerAlpha}'s reward by 1.3th power`,
+        canComplete: new Function(`return player.${(i+9).toString(36).toUpperCase()}${branch}.points.gte('1e1000')`),
+        goalDescription: `1.00e1000 ${(i+9).toString(36).toUpperCase()}${smallNumber(Number(branch)+1)} Point`
+      }
+      c1Line.push(j);
     }
   }
   prevNodes = stageNodes;

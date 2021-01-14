@@ -14,7 +14,7 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.6.0",
+	num: "0.7.0",
 	name: "no desc",
 }
 
@@ -52,6 +52,8 @@ let changelog =
 		- Added new Upgrade: Multiply Resource gain of this layer by x1e100 <br>
 		<h3>v0.6.0</h3><br>
 		- Added new Upgrade: Make point gain ^1.1 <br>
+		<h3>v0.7.0</h3><br>
+		- Added 'Challenge I' (Appears after layer O) <br>
 	`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
@@ -99,7 +101,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e1004000000000000000"))
+	return player.points.gte(new Decimal("ee308"))
 }
 
 

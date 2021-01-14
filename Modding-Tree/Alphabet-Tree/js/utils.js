@@ -812,11 +812,6 @@ function isPlainObject(obj) {
 	return (!!obj) && (obj.constructor === Object)
 }
 
-var smallNums = '₀₁₂₃₄₅₆₇₈₉';
-function smallNumber(str) {
-	return str.replace(/([0-9])/g, function(match, p1){return smallNums[Number(p1)]});
-}
-
 document.title = modInfo.name
 
 
