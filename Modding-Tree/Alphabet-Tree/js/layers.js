@@ -207,10 +207,10 @@ for (var i = 0; i < 26; i++) {
     if (i >= 15 && (seed%4 == 0 || i == 15)) {
       layers[`${layerAlpha}${j}`].upgrades.cols++;
       tempUpgNum++;
-      var tempMul = D(1.1);
+      var tempMul = D(1.2);
       layers[`${layerAlpha}${j}`].upgrades[tempUpgNum] = {
         title: "Point Boost III",
-        description: () => {return `Make point gain ^${exponentialFormat(1.35+getSeed(player.tab)/100, 2)}`},
+        description: () => {return `Make point gain ^${exponentialFormat(1.2, 2)}`},
         cost: new Decimal('1e50').mul(D(seed).pow(seed*2))
       }
       pointBoosts2.push({layer: `${layerAlpha}${j}`, num: tempUpgNum, pow: tempMul});
