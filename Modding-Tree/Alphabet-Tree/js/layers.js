@@ -204,13 +204,13 @@ for (var i = 0; i < 26; i++) {
       }
       resBoosts1[`${layerAlpha}${j}`] = ({num: tempUpgNum});
     }
-    if (i >= 15 && (seed%4 == 0 || i == 15)) {
+    if (i >= 15 && (seed%10 == 0 || i == 15)) {
       layers[`${layerAlpha}${j}`].upgrades.cols++;
       tempUpgNum++;
-      var tempMul = D(1.2);
+      var tempMul = D(1.15);
       layers[`${layerAlpha}${j}`].upgrades[tempUpgNum] = {
         title: "Point Boost III",
-        description: () => {return `Make point gain ^${exponentialFormat(1.2, 2)}`},
+        description: () => {return `Make point gain ^${exponentialFormat(1.15, 2)}`},
         cost: new Decimal('1e50').mul(D(seed).pow(seed*2))
       }
       pointBoosts2.push({layer: `${layerAlpha}${j}`, num: tempUpgNum, pow: tempMul});
