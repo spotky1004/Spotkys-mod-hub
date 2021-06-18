@@ -4860,6 +4860,7 @@ addLayer("ps", {
 		},
         gainMult() { // Calculate the multiplier for main currency from bonuses
             mult = new Decimal(1)
+			mult = mult.div(tmp.resMult);
 			if (player.i.buyables[11].gte(2)) mult = mult.div(buyableEffect("s", 17));
             return mult
         },
