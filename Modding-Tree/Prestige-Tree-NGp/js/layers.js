@@ -9278,7 +9278,7 @@ addLayer("ng", {
 			title: "End Skip",
 			description: "Pow NG requirement based on total NG",
 			effect() {
-				return new Decimal(1/2).pow(player.ng.total.div(10000));
+				return new Decimal(4/5).pow(player.ng.total.div(10000));
 			},
 			effectDisplay() {
 				return `^<b>${format(tmp.ng.upgrades[33].effect)}</b>`
