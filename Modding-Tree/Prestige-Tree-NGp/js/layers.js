@@ -3927,7 +3927,6 @@ addLayer("ss", {
 		base() { return new Decimal(((Array.isArray(tmp.ma.mastered))?tmp.ma.mastered.includes(this.layer):false)?1.1:1.15) },
         gainMult() { // Calculate the multiplier for main currency from bonuses
             mult = new Decimal(1)
-			mult = mult.div(tmp.resMult);
 			if (player.ne.unlocked) mult = mult.div(tmp.ne.thoughtEff1);
             return mult
         },
@@ -4861,7 +4860,6 @@ addLayer("ps", {
 		},
         gainMult() { // Calculate the multiplier for main currency from bonuses
             mult = new Decimal(1)
-			mult = mult.div(tmp.resMult);
 			if (player.i.buyables[11].gte(2)) mult = mult.div(buyableEffect("s", 17));
             return mult
         },
@@ -6460,7 +6458,6 @@ addLayer("i", {
 		base() { return new Decimal(((Array.isArray(tmp.ma.mastered))?tmp.ma.mastered.includes(this.layer):false)?"1e100":"1e250") },
         gainMult() { // Calculate the multiplier for main currency from bonuses
             mult = new Decimal(1)
-			mult = mult.div(tmp.resMult);
             return mult
         },
         gainExp() { // Calculate the exponent on main currency from bonuses
