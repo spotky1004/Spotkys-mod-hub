@@ -9238,7 +9238,7 @@ addLayer("ng", {
 				return new Decimal(99).add(player.ng.total.pow(3)).pow(player.ng.total) 
 			},
 			effectDisplay() { return "<b>"+format(tmp.ng.upgrades[22].effect)+"x</b>" },
-			cost: new Decimal(1)
+			cost: new Decimal(2)
 		},
 		23: {
 			title: "Crescent",
@@ -9247,7 +9247,7 @@ addLayer("ng", {
 				return new Decimal(4+layerCount()**2).pow(layerCount());
 			},
 			effectDisplay() {return "<b>"+format(tmp.ng.upgrades[23].effect)+"x</b>" },
-			cost: new Decimal(3)
+			cost: new Decimal(5)
 		},
 		31: {
 			title: "Start Skip",
@@ -9261,7 +9261,7 @@ addLayer("ng", {
 				const dec = num%1;
 				return `<b>${int}</b><span style="font-weight: 550;">.${dec.toFixed(2).split(".")[1].padStart(2, "0")}</span> achievements`
 			},
-			cost: new Decimal(2)
+			cost: new Decimal(3)
 		},
 		32: {
 			title: "NGNG",
