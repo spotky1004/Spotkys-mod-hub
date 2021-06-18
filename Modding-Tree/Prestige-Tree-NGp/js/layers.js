@@ -4169,7 +4169,7 @@ addLayer("m", {
         exponent() { return new Decimal(((Array.isArray(tmp.ma.mastered))?tmp.ma.mastered.includes(this.layer):false)?0.0085:0.007) }, // Prestige currency exponent
         gainMult() { // Calculate the multiplier for main currency from bonuses
             mult = new Decimal(1);
-			mult = mult.div(tmp.resMult);
+			mult = mult.mul(tmp.resMult);
 			if (hasAchievement("a", 74)) mult = mult.times(challengeEffect("h", 32));
             return mult.times(tmp.n.realDustEffs2?tmp.n.realDustEffs2.purpleBlue:new Decimal(1));
         },
