@@ -299,7 +299,7 @@ addLayer("b", {
 			if (player.s.unlocked) mult = mult.div(buyableEffect("s", 13));
 			return mult;
 		},
-		canBuyMax() { return hasMilestone("b", 1) },
+		canBuyMax() { return player.ng.upgrades.includes(21) || hasMilestone("b", 1) },
         row: 1, // Row the layer is in on the tree (0 is the first row)
         hotkeys: [
             {key: "b", description: "Press B to perform a booster reset", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -571,7 +571,7 @@ addLayer("g", {
 			if (player.s.unlocked) mult = mult.div(buyableEffect("s", 13));
 			return mult;
 		},
-		canBuyMax() { return hasMilestone("g", 2) },
+		canBuyMax() { return player.ng.upgrades.includes(21) || hasMilestone("g", 2) },
         row: 1, // Row the layer is in on the tree (0 is the first row)
         hotkeys: [
             {key: "g", description: "Press G to perform a generator reset", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -927,7 +927,7 @@ addLayer("t", {
         gainExp() { // Calculate the exponent on main currency from bonuses
             return new Decimal(1)
         },
-		canBuyMax() { return hasMilestone("q", 1) },
+		canBuyMax() { return player.ng.upgrades.includes(21) || hasMilestone("q", 1) },
 		enCapMult() {
 			let mult = new Decimal(1);
 			if (hasUpgrade("t", 12)) mult = mult.times(upgradeEffect("t", 12));
@@ -1671,7 +1671,7 @@ addLayer("s", {
 			"buyables", "blank", "upgrades"],
         layerShown(){return player.g.unlocked},
         branches: ["g"],
-		canBuyMax() { return hasMilestone("q", 1) },
+		canBuyMax() { return player.ng.upgrades.includes(21) ||  hasMilestone("q", 1) },
 		freeSpaceBuildings() {
 			let x = new Decimal(0);
 			if (hasUpgrade("s", 11)) x = x.plus(1);
@@ -2476,7 +2476,7 @@ addLayer("sb", {
 			return mult;
 		},
 		autoPrestige() { return player.sb.auto && hasMilestone("q", 4) && player.ma.current!="sb" },
-		canBuyMax() { return hasMilestone("q", 7) },
+		canBuyMax() { return player.ng.upgrades.includes(21) ||  hasMilestone("q", 7) },
         row: 2, // Row the layer is in on the tree (0 is the first row)
         hotkeys: [
             {key: "B", description: "Press Shift+B to perform a super booster reset", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -2556,7 +2556,7 @@ addLayer("sg", {
 			player.sg.power = player.sg.power.plus(tmp.sg.effect.times(diff));
 			player.sg.time = player.sg.time.plus(diff);
 		},
-		canBuyMax() { return hasMilestone("q", 7) },
+		canBuyMax() { return player.ng.upgrades.includes(21) || hasMilestone("q", 7) },
         row: 2, // Row the layer is in on the tree (0 is the first row)
         hotkeys: [
             {key: "G", description: "Press Shift+G to perform a super generator reset", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -3936,7 +3936,7 @@ addLayer("ss", {
         gainExp() { // Calculate the exponent on main currency from bonuses
             return new Decimal(1)
         },
-		canBuyMax() { return hasMilestone("hn", 3) },
+		canBuyMax() { return player.ng.upgrades.includes(21) || hasMilestone("hn", 3) },
 		effBase() {
 			let base = new Decimal(2);
 			if (hasUpgrade("ss", 32)) base = base.plus(upgradeEffect("ss", 32));
@@ -4870,7 +4870,7 @@ addLayer("ps", {
         gainExp() { // Calculate the exponent on main currency from bonuses
             return new Decimal(1)
         },
-		canBuyMax() { return hasMilestone("hn", 9) },
+		canBuyMax() { return player.ng.upgrades.includes(21) || hasMilestone("hn", 9) },
         row: 4, // Row the layer is in on the tree (0 is the first row)
         hotkeys: [
             {key: "P", description: "Press Shift+P to Phantom Soul Reset", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -6468,7 +6468,7 @@ addLayer("i", {
         gainExp() { // Calculate the exponent on main currency from bonuses
             return new Decimal(1)
         },
-		canBuyMax() { return hasMilestone("ma", 1) },
+		canBuyMax() { return player.ng.upgrades.includes(21) || hasMilestone("ma", 1) },
         row: 5, // Row the layer is in on the tree (0 is the first row)
         hotkeys: [
             {key: "i", description: "Press I to Imperium Reset", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -6739,7 +6739,7 @@ addLayer("ma", {
         gainExp() { // Calculate the exponent on main currency from bonuses
             return new Decimal(1)
         },
-		canBuyMax() { return false },
+		canBuyMax() { return player.ng.upgrades.includes(21) },
         row: 6, // Row the layer is in on the tree (0 is the first row)
         hotkeys: [
             {key: "A", description: "Press Shift+A to Mastery Reset", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -7804,7 +7804,7 @@ addLayer("ne", {
             mult = new Decimal(1)
             return mult
         },
-		canBuyMax() { return false },
+		canBuyMax() { return player.ng.upgrades.includes(21) },
         row: 4, // Row the layer is in on the tree (0 is the first row)
         hotkeys: [
             {key: "u", description: "Press U to Neuron Reset", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -8040,7 +8040,7 @@ addLayer("id", {
         gainExp() { // Calculate the exponent on main currency from bonuses
             return new Decimal(1)
         },
-		canBuyMax() { return hasMilestone("id", 4) && player.id.auto },
+		canBuyMax() { return player.ng.upgrades.includes(21) || (hasMilestone("id", 4) && player.id.auto) },
         row: 5, // Row the layer is in on the tree (0 is the first row)
         hotkeys: [
             {key: "I", description: "Press Shift+I to Idea Reset", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -8987,7 +8987,7 @@ addLayer("c", {
         gainExp() { // Calculate the exponent on main currency from bonuses
             return new Decimal(1)
         },
-		canBuyMax() { return false },
+		canBuyMax() { return player.ng.upgrades.includes(21) },
         row: 6, // Row the layer is in on the tree (0 is the first row)
         hotkeys: [
             {key: "C", description: "Press Shift+C to Civilization Reset", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
