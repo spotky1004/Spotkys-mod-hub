@@ -1,8 +1,7 @@
 * {
 	transition-duration: 0.5s;
 	text-align: center;
-	font-family: "Inconsolata", monospace;
-	font-weight: bold;
+	font-family: "Lucida Console", "Courier New", monospace;
 	table-align: center;
 	margin: auto;
 }
@@ -58,7 +57,6 @@ td {
 
 h1, h2, h3, b, input {
 	display: inline;
-	font-family: "Lucida Console", "Courier New", monospace
 }
 
 
@@ -66,45 +64,43 @@ h1, h2, h3, b, input {
 .treeNode {
 	height: 100px;
 	width: 100px;
-	border: var(--hqProperty1);
-	border-color: rgba(0, 0, 0, 0.125);
+	border-width: 1px;
+	border-color: black;
 	border-radius: 50%;
-	box-shadow: var(--hqProperty2a), var(--hqProperty2b);
 	font-size: 40px;
-	font-family: "Lucida Console", "Courier New", monospace;
-	color: rgba(0, 0, 0, 0.5);
-	text-shadow: var(--hqProperty3);
+	color: black;
 	padding: 0;
-	margin: 0 10px 0 10px;
 }
 
 
 .treeButton {
 	height: 100px;
 	width: 100px;
-	border: var(--hqProperty1);
-	border-color: rgba(0, 0, 0, 0.125);
+	border-width: 1px;
+	border-color: black;
 	border-radius: 33%;
-	box-shadow: var(--hqProperty2a), var(--hqProperty2b);
 	font-size: 40px;
-	font-family: "Lucida Console", "Courier New", monospace;
-	color: rgba(0, 0, 0, 0.5);
-	text-shadow: var(--hqProperty3);
+	color: black;
 	padding: 0;
-	margin: 0 10px 0 10px;
 }
 
 
 .smallNode {
 	height: 60px;
 	width: 60px;
+	border-width: 1px;
+	border-color: black;
+	border-radius: 50%;
 	font-size: 30px;
+	color: black;
+	padding: 0;
+
 }
 
 
 .locked {
-	background-color: #bf8f8f;
-	cursor: not-allowed;
+	background-color: #bf8f8f !important;
+	cursor: not-allowed !important;
 }
 
 .can {
@@ -113,38 +109,35 @@ h1, h2, h3, b, input {
 
 .can:hover {
 	transform: scale(1.15, 1.15);
-	box-shadow: 0 0 20px var(--points)
 }
 
 
-.resetNotify {
-	box-shadow: var(--hqProperty2a), 0 0 8px #ffffff;
+.resetNotify:not(.locked) {
+	box-shadow: 0px 0px 8px #ffffff;
 	z-index: 3
 }
 
 .treeNode.can:hover {
 	transform: scale(1.15, 1.15);
-	box-shadow: var(--hqProperty2a), 0 0 20px var(--points);
 	z-index: 4
 }
 
-.notify {
+.notify:not(.locked) {
 	transform: scale(1.05, 1.05);
 	border-color: rgba(0, 0, 0, 0.125);
-	box-shadow: var(--hqProperty2a), 0 0 20px #ff0000;
+	box-shadow: 0px 0px 20px #ff0000;
 	z-index: 3
 }
 
 .bought {
-	background-color: var(--locked);
-	filter: hue-rotate(60deg);
+	background-color: #77bf5f;
 	cursor: default;
 }
 
 .back {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 0px;
+	left: 0px;
 	background-color: transparent;
 	border: 1px solid transparent;
 	color: var(--color);
@@ -154,7 +147,7 @@ h1, h2, h3, b, input {
 
 .other-back {
 	position: absolute;
-	top: 0;
+	top: 0px;
 	left: 60px;
 	background-color: transparent;
 	border: 1px solid transparent;
@@ -166,7 +159,7 @@ h1, h2, h3, b, input {
 
 .back:hover {
 	transform: scale(1.1, 1.1);
-	text-shadow: 0 0 7px var(--color);
+	text-shadow: 0px 0px 7px var(--color);
 }
 
 .barBase {
@@ -211,17 +204,17 @@ h1, h2, h3, b, input {
 	color: var(--color);
 	font-size: 20px;
 	cursor: pointer;
-	padding: 5px 20px;
-	margin: 5px;
+	padding: 5px 20px 5px 20px;
+	margin: 5px 5px 5px 5px;
 	border-radius: 10px;
 	border: 2px solid;
-	color: var(--color);
+	border-color: rgba(0, 0, 0, 0.125);
 
 }
 
 .tabButton:hover {
 	transform: scale(1.1, 1.1);
-	text-shadow: 0 0 7px var(--color);
+	text-shadow: 0px 0px 7px var(--color);
 }
 
 .reset {
@@ -241,6 +234,20 @@ h1, h2, h3, b, input {
 	font-size: 10px;
 }
 
+.pseudo {
+	border: 2px dotted white;
+}
+
+.pseudo:not(.plocked) {
+	background-color: #f5b942;
+}
+
+.plocked {
+	background-color: var(--bg);
+	color: var(--color);
+	cursor: not-allowed;
+}
+
 .achievement {
 	height: 90px;
 	width: 90px;
@@ -249,10 +256,10 @@ h1, h2, h3, b, input {
 	border-color: rgba(0, 0, 0, 0.125);
 	font-size: 10px;
 	color: white;
-	text-shadow: 0 0 2px #000000;
+	text-shadow: 0px 0px 2px #000000;
 }
 .achievement:hover {
-	box-shadow: 0 0 10px var(--points);
+	box-shadow: 0px 0px 10px var(--points);
 	z-index: 7;
 }
 
@@ -293,13 +300,13 @@ h1, h2, h3, b, input {
 
 #points {
 	color: var(--points);
-	text-shadow: 0 0 10px var(--points);
+	text-shadow: 0px 0px 10px var(--points);
 }
 
 #optionWheel {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 0px;
+	left: 0px;
 	height: 50px;
 	width: 50px;
 	cursor: pointer;
@@ -307,6 +314,25 @@ h1, h2, h3, b, input {
 
 #optionWheel:hover {
 	transform: rotate(360deg);
+}
+
+#help {
+	font-size: 20px;
+	color: white;
+	position: absolute;
+	top: 100px;
+	left: 4px;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #e0f000;
+}
+
+#help:hover {
+	transform: scale(1.2, 1.2);
+	text-shadow: 5px 0px 10px #e0f000,
+              -3px 0px 12px #e0f000;
 }
 
 #info {
@@ -324,13 +350,13 @@ h1, h2, h3, b, input {
 
 #info:hover {
 	transform: scale(1.2, 1.2);
-	text-shadow: 5px 0 10px #02f2f2,
-              -3px 0 12px #02f2f2;
+	text-shadow: 5px 0px 10px #02f2f2,
+              -3px 0px 12px #02f2f2;
 }
 
 #discord {
 	position: absolute;
-	top: 120px;
+	top: 170px;
 	left: 4px;
 	width: 40px;
 	height: 40px;
@@ -360,7 +386,7 @@ h1, h2, h3, b, input {
 	top: 4px;
 	text-align: right;
 	color: var(--points);
-	text-shadow: 0 0 10px var(--points);
+	text-shadow: 0px 0px 10px var(--points);
 	cursor: pointer;
 }
 
@@ -379,8 +405,8 @@ a {
 	display: block;
 	font-size: 20px;
 	color: #41f5f5;
+	text-decoration-line: none;
 	cursor: pointer;
-	font-family: "Lucida Console", "Courier New", monospace;
 	-webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: #02f2f2;
 	text-decoration: none;
@@ -388,8 +414,18 @@ a {
 
 .link:hover {
 	transform: scale(1.2, 1.2);
-	text-shadow: 5px 0 10px #02f2f2,
-              -3px 0 12px #02f2f2;
+	text-shadow: 5px 0px 10px #02f2f2,
+              -3px 0px 12px #02f2f2;
+}
+
+.link.pat {
+	color: #f2d13d;
+	-webkit-text-stroke-color: #f2b202;
+}
+
+.link.pat:hover {
+	text-shadow: 5px 0px 10px #f2b202,
+              -3px 0px 12px #f2b202;
 }
 
 .opt {
@@ -485,6 +521,7 @@ a {
 .col.right {
 	top: 0;
 	right: 0;
+	overflow-x: hidden;
 }
 
 #app {
@@ -546,7 +583,7 @@ ul {
 
 [tooltip] {
 	position: relative;
-	z-index: 99999999 !important
+	z-index: 999999 !important;
 }
 
 [tooltip]:before,
@@ -557,7 +594,6 @@ ul {
 	opacity: 0;
 	pointer-events: none;
 	white-space: pre-wrap;
-	-webkit-transform:translate3d(0,0,0);
 }
 
 [tooltip]:before {
@@ -577,7 +613,6 @@ ul {
 	text-align: center;
 	font-size: 14px;
 	line-height: 1.2;
-	transition-duration: 0.5s;
 	white-space: pre-wrap;
 }
 
@@ -593,18 +628,29 @@ ul {
 	content: " ";
 	font-size: 0;
 	line-height: 0;
-	transition-duration: 0.5s;
 	white-space: pre-wrap;
 }
 
 [tooltip]:hover:before,
 [tooltip]:hover:after {
-	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
-	visibility: visible;
-	opacity: 1;
+	animation: tooltip 0.25s linear 1;
+	animation-fill-mode: forwards;  
 	white-space: pre-wrap;
-	-webkit-transform:translate3d(0,0,0);
+}
 
+@keyframes tooltip {
+	0% {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+		opacity: 0;
+		visibility: hidden;
+	}
+	100% {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity: 1;
+		visibility: visible;
+	}
 }
 
 #loadingSection {
@@ -615,13 +661,14 @@ ul {
 
 .treeOverlay {
 	z-index: 200000;
-	pointer-events:none;
+	pointer-events:none; 
 	overflow:hidden;
 }
 
 .overlayThing {
-	pointer-events:auto;
+	pointer-events: auto;
 	background-color: var(--background);
+	box-shadow: 0px 0px 5px 5px var(--background);
 }
 
 .sideLayers {
@@ -677,6 +724,125 @@ button > * {
     margin-bottom: -2px;
 }
 
-#treeTab td button {
-    margin: 0 10px;
+#treeTab span:not(.noChange) button {
+    margin: 0 10px 0 10px;
+}
+
+.nodeRow {
+	display: flex !important;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+}
+
+.star {
+	position: relative;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	z-index: 10000;
+	margin-left: 0.9em;
+	margin-right: 0.9em;
+	margin-bottom: 1.2em;
+	border-right: 0.3em solid transparent;
+	border-bottom: 0.7em solid #ffcc00;
+	border-left: 0.3em solid transparent;
+	font-size: 10px;
+}
+
+.star:before, .star:after {
+	content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: .6em;
+    left: -1em;
+	border-right: 1em solid transparent;
+    border-bottom: 0.7em solid #ffcc00;
+    border-left: 1em solid transparent;
+	transform: rotate(-35deg);
+}
+
+.star:after {
+	transform: rotate(35deg);
+}
+
+.popup {
+	display: block;
+	z-index: 10000000000000000000000000000000000000000;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto; 
+}
+
+.popupBlocker {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	background-color: var(--color); 
+	background-color: rgba(255,255,255,0.4); 
+	overflow: auto; 
+	content: ' ';
+}
+
+.popup-content {
+	background-color: var(--background);
+	margin: 15% auto; 
+	padding: 20px;
+	font-size: 16px;
+	border: 2px solid #888888;
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: flex;
+	flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+	position: fixed;
+    top: 10vh;
+    left: 50vw;
+	min-width: 50%;
+	max-width: 80%;
+	height: 50%;
+	transform: translate(-50%, -50%)
+}
+
+.popupBtn {
+	height: 50px;
+	width: 100px;
+	border-radius: 25%;
+	border: 2px solid;
+	border-color: rgba(0, 0, 0, 0.125);
+	font-size: 16px;
+	background-color: var(--color);
+}
+
+.popupBtnMini {
+	height: 30px;
+	width: 20px;
+	border-radius: 25%;
+	border: 2px solid;
+	border-color: rgba(0, 0, 0, 0.125);
+	font-size: 15px;
+	padding-left: 4px;
+	background-color: var(--color);
+}
+
+.popup-content > .upgRow {
+	margin-bottom: 20px !important;
+}
+
+.activeSave {
+	transform: scale(1.1, 1.1);
+	text-shadow: 0px 0px 7px yellow;
+}
+
+.widthLock {
+	min-width: 150px;
+	max-width: 150px;
 }

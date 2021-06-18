@@ -52,7 +52,7 @@ for (var i = 0; i < 26; i++) {
   for (var j = 0; j < stageNodes; j++) {
     var seed = i+j;
     var branch = seed%prevNodes;
-    var req = D(10).mul((i+1)**2).pow((i >= 5 ? i/2+1 : 1)).pow((i >= 10 ? i+1 : 1)).div(4).div(i>15?D(1e10).pow(i-14):1);
+    var req = D(10).mul((i+1)**2).pow((i >= 5 ? i/2+1 : 1)).pow((i >= 10 ? i+1 : 1)).div(4).div(i>15?D(1e10).pow(i-14):1).pow((i>15 ? i**2/2.34 : 1));
     addLayer(`${layerAlpha}${j}`, {
       name: `${layerAlpha}${smallNumber(j+1)}`, // This is optional, only used in a few places, If absent it just uses the layer id.
       symbol: `${layerAlpha}${smallNumber(j+1)}`, // This appears on the layer's node. Default is the id with the first letter capitalized
@@ -68,13 +68,17 @@ for (var i = 0; i < 26; i++) {
       resource: `${layerAlpha}${smallNumber(j+1)} Points`, // Name of prestige currency
       baseResource: (i ? `${(i+9).toString(36).toUpperCase()}${smallNumber(branch+1)} Points` : 'points'), // Name of resource prestige is based on
       type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-      exponent: 0.5/stageNodes/(i+1)**0.2, // Prestige currency exponent
+      exponent: 0.5/stageNodes/(i+1)**0.2/(i>15?i**2:1), // Prestige currency exponent
       gainMult() {
         var layerOrd = alphaToNum(this.layer[0]);
         var mult = D(1);
 
         for (var i = 0; i < layerNodes[layerOrd+1]; i++) {
-          mult = mult.mul(player[numToAlpha(layerOrd+1) + i].points.add(1));
+          if (alphaToNum(this.layer[0]) < 15) {
+            mult = mult.mul(player[numToAlpha(layerOrd+1) + i].points.add(1));
+          } else {
+            mult = mult.mul(D(10).pow(player[numToAlpha(layerOrd+1) + i].points).add(1));
+          }
         }
         if (typeof resBoosts1[this.layer] != "undefined") {
           if (hasUpgrade(this.layer, resBoosts1[this.layer].num)) {
@@ -136,14 +140,18 @@ for (var i = 0; i < 26; i++) {
           effectDescription: `Gain ${(100*0.9**i).toFixed(2)}% of ${layerAlpha}${smallNumber(j+1)} Reset reward per second`,
         },
         1: {
-          requirementDescription: `Collect e10,000,000 ${layerAlpha}${smallNumber(j+1)}`,
-          done: () => {return player[this.layer].best.gte(D('1e10000000'))},
+          requirementDescription: `Collect ${alphaToNum(layerAlpha[0]) < 15 ? 'e10,000,000' : 'e10,000,000,000'} ${layerAlpha}${smallNumber(j+1)}`,
+          done: () => {return player[this.layer].best.gte(D(alphaToNum(this.layer[0]) < 15 ? 'e10000000' : 'e10000000000'))},
           effectDescription: `Keep ^0.01 of resource of this layer on reset`,
         },
       },
 
       effectDescription() {
-        eff = player[this.layer].points.add(1);
+        if (alphaToNum(this.layer[0]) < 16) {
+          eff = player[this.layer].points.add(1);
+        } else {
+          eff = D(10).pow(player[this.layer].points).add(1);
+        }
         return "\nwhich are giving a " + format(eff) + "× boost to the previous layer gain."
       },
 
@@ -204,13 +212,13 @@ for (var i = 0; i < 26; i++) {
       }
       resBoosts1[`${layerAlpha}${j}`] = ({num: tempUpgNum});
     }
-    if (i >= 15 && (seed%10 == 0 || i == 15)) {
+    if (i >= 16 && (seed%4 == 0 || i == 16)) {
       layers[`${layerAlpha}${j}`].upgrades.cols++;
       tempUpgNum++;
-      var tempMul = D(1.15);
+      var tempMul = D(1.1);
       layers[`${layerAlpha}${j}`].upgrades[tempUpgNum] = {
         title: "Point Boost III",
-        description: () => {return `Make point gain ^${exponentialFormat(1.15, 2)}`},
+        description: () => {return `Make point gain ^${exponentialFormat(1.1, 2)}`},
         cost: new Decimal('1e50').mul(D(seed).pow(seed*2))
       }
       pointBoosts2.push({layer: `${layerAlpha}${j}`, num: tempUpgNum, pow: tempMul});
@@ -227,7 +235,7 @@ for (var i = 0; i < 26; i++) {
       layers[`${layerAlpha}${j}`].challenges[tempChallNum] = {
         name: "Challenge I",
         challengeDescription: "Passive gain is disabled",
-        rewardDescription : `Raise ${layerAlpha}'s reward by 1.3th power`,
+        rewardDescription : `Raise ${layerAlpha}'s reward to 1.3th power`,
         canComplete: new Function(`return player.${(i+9).toString(36).toUpperCase()}${branch}.points.gte('1e1000')`),
         goalDescription: `1.00e1000 ${(i+9).toString(36).toUpperCase()}${smallNumber(Number(branch)+1)} Point`
       }
