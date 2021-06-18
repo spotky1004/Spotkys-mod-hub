@@ -2470,7 +2470,7 @@ addLayer("sb", {
 		base() { return ((Array.isArray(tmp.ma.mastered))?tmp.ma.mastered.includes(this.layer):false)?1.025:1.05 },
 		gainMult() { 
 			let mult = new Decimal(1);
-			mult = mult.div(tmp.resMult);
+			mult = mult.sub(tmp.resMult.add(1).log(10));
 			if (hasUpgrade("ss", 21)) mult = mult.div(1.2);
 			if ((Array.isArray(tmp.ma.mastered))?tmp.ma.mastered.includes(this.layer):false) mult = mult.div(4/3);
 			return mult;
