@@ -7617,7 +7617,7 @@ addLayer("en", {
 		},
 		passiveGeneration() { return hasMilestone("en", 0)?0.1:0 + tmp.resPassive},
 		canReset() {
-			return player.o.points.gte(tmp.en.req) && tmp.en.getResetGain.gt(0) && (hasMilestone("en", 0)?player.en.points.lt(tmp.en.getResetGain):player.en.points.eq(0))
+			return  player.o.points.gte(tmp.en.req) && tmp.en.getResetGain.gt(0) && (hasMilestone("en", 0)?player.en.points.lt(tmp.en.getResetGain)||tmp.resMult.gt(1):player.en.points.eq(0))
 		},
 		dispGainFormula() {
 			let start = tmp.en.req;
