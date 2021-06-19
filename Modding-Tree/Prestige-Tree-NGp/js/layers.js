@@ -7828,7 +7828,7 @@ addLayer("ne", {
         branches: ["ss", "sg"],
 		update(diff) {
 			if (player.ne.unlocked && (player.ne.activeChallenge==11||hasAchievement("a", 151))) {
-				player.ne.signals = player.ne.signals.plus(tmp.ne.challenges[11].amt.times(diff)).min((hasMilestone("ne", 4)||hasMilestone("id", 0))?(1/0):tmp.ne.signalLim);
+				player.ne.signals = player.ne.signals.plus(tmp.ne.challenges[11].amt.times(diff.times(tmp.resMults.add(1).log(10)))).min((hasMilestone("ne", 4)||hasMilestone("id", 0))?(1/0):tmp.ne.signalLim);
 				if (player.ne.signals.gte(tmp.ne.signalLim.times(0.999))) {
 					if (hasMilestone("id", 0)) player.ne.thoughts = player.ne.thoughts.max(tmp.ne.thoughtTarg);
 					else {
