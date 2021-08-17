@@ -50,7 +50,7 @@ addLayer("m", {
             const layer = layers[name];
             if (typeof layer.row !== "number" || layer.row >= 4) continue;
             const startData = startPlayer[name];
-            delete startData.unlocked;
+            // delete startData.unlocked;
             player[name] = startData;
         }
 
