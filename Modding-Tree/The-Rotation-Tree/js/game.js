@@ -382,6 +382,8 @@ function gameLoop(diff) {
 	}
 
 	layerGeneration(diff);
+	player.points = player.m.points;
+	ResettingMatter = false;
 }
 
 function hardReset(resetOptions) {

@@ -3,7 +3,11 @@ let modInfo = {
 	id: "the_rotation_tree",
 	author: "Spotky1004",
 	pointsName: "matter",
-	modFiles: ["./layers/water.js", "tree.js"],
+	modFiles: [
+		"./layers/matter.js",
+		"./layers/water.js",
+		"tree.js"
+	],
 
 	discordName: "Spotky's game!",
 	discordLink: "discord.gg/wkdVQxT",

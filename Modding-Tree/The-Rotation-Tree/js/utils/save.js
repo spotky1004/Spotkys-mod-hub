@@ -21,7 +21,13 @@ function startPlayerBase() {
 
 		points: modInfo.initialStartPoints,
 		subtabs: {},
-		lastSafeTab: (readData(layoutInfo.showTree) ? "none" : layoutInfo.startTab)
+		lastSafeTab: (readData(layoutInfo.showTree) ? "none" : layoutInfo.startTab),
+
+		playing: null,
+		rotationCount: new Decimal(0),
+		rotationDone: {
+			"w": new Decimal(0)
+		}
 	};
 }
 function getStartPlayer() {

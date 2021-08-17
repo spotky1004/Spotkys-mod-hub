@@ -1,3 +1,11 @@
+function overallWaterMult() {
+    let mult = new Decimal(1);
+    if (hasUpgrade("m", 21)) mult = mult.mul(2);
+    if (hasUpgrade("m", 32)) mult = mult.mul(temp.m.upgrades[31].effect);
+
+    return mult;
+}
+
 addLayer("Fw", {
     name: "waterFactory", 
     symbol: "F<sub>w</sub>", 
@@ -15,7 +23,9 @@ addLayer("Fw", {
         product = product.mul(player.Pw.points);
         product = product.mul(player.Ew.points);
         if (hasUpgrade("Ew", 21)) product = product.mul(player.Fw.points.add(1));
-        if (hasUpgrade("Pw", 21)) product = product.mul(player.w.points.add(1));
+        if (hasUpgrade("m", 41)) product = product.mul(player.w.points.add(1));
+
+        if (hasUpgrade("Ew", 21)) product = product.pow(2);
 
         return product;
     }, 
@@ -24,7 +34,8 @@ addLayer("Fw", {
     exponent: 1.5, 
     gainMult() { 
         mult = new Decimal(1)
-        return mult
+
+        return mult;
     },
     gainExp() { 
         return new Decimal(1)
@@ -105,7 +116,8 @@ addLayer("Pw", {
 
         if (hasUpgrade("Ew", 11)) gain = gain.add(0.5);
 
-        let mult = temp.Fw.buyables[11].effect;
+        let mult = overallWaterMult();
+        mult = mult.mul(temp.Fw.buyables[11].effect);
 
         return gain.mul(mult);
     },
@@ -159,7 +171,7 @@ addLayer("Ew", {
 
         if (hasUpgrade("w", 11)) gain = gain.add(1);
 
-        let mult = new Decimal(1);
+        let mult = overallWaterMult();
         for (let i = 31; i <= 33; i++) if (hasUpgrade("w", i)) mult = mult.mul(3);
         for (let i = 41; i <= 44; i++) if (hasUpgrade("w", i)) mult = mult.mul(4);
         if (hasUpgrade("w", 21)) mult = mult.mul(temp.w.upgrades[21].effect);
@@ -191,32 +203,36 @@ addLayer("w", {
 		points: new Decimal(0),
     }},
     color: "#42bcf5",
-    requires: new Decimal(2.5), 
+    requires: new Decimal(1), 
     resource: "Water Molecule", 
-    baseResource: "matter", 
-    baseAmount() {return player.points}, 
+    baseResource: "Nothing", 
+    baseAmount() {return new Decimal(1)}, 
     type: "normal", 
-    exponent: 0.5, 
+    exponent: 1, 
+    prestigeButtonText() {return "Start Water"},
+    canReset() { return player.playing === null; },
     gainMult() { 
-        mult = new Decimal(1)
-        return mult
+        return new Decimal(1);
     },
     gainExp() { 
-        return new Decimal(1)
+        return new Decimal(1);
     },
     row: 3, 
     hotkeys: [
         {key: "w", description: "W: Reset for water", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
+    branches: ["m"],
     layerShown(){return true},
     doReset(resettingLayer) {
-        player.points = new Decimal(0)
+        if (!ResettingMatter) player.playing = "w";
     },
     generation() {
         let gain = new Decimal(0);
         gain = gain.add(player.Fw.points.pow(player.Fw.points.div(3).add(2)).mul(player.Fw.points));
 
-        return gain;
+        let mult = overallWaterMult();
+
+        return gain.mul(mult);
     },
     effectDescription() { return `(${format(this.generation())}/s)` },
     upgrades: {
