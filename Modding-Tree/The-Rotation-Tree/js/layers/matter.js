@@ -29,7 +29,7 @@ addLayer("m", {
         ]
     ],
     type: "normal", 
-    exponent: 1, 
+    exponent: 0, 
     gainMult() { 
         mult = new Decimal(1);
         mult = mult.add(player.rotationDone.w);
