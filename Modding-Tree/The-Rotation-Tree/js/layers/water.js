@@ -71,7 +71,7 @@ addLayer("Fw", {
             buy() {
                 const cost = temp.Fw.buyables[11].cost;
 
-                if (!hasUpgrade("Ew", 41)) {
+                if (!hasUpgrade("m", 41)) {
                     player.Ew.points = player.Ew.points.sub(cost.Essence);
                     player.Pw.points = player.Pw.points.sub(cost.Power);
                     player.Fw.points = player.Fw.points.sub(cost.Factory);
