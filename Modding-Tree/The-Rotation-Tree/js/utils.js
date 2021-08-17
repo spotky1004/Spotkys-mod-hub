@@ -8,7 +8,7 @@ function buyableDisplay(buyable, description) {
 
 	let output = "";
 	output += description + "<br><br>"; // Description
-    output += "effect: ".bold() + format(buyable.effect(Have)) + "x<br>"; // Effect
+    output += "effect: ".bold() + exponentialFormat(buyable.effect(Have)) + "x<br>"; // Effect
     output += complexCostDisplay(Cache.cost) + " <br>"; // Cost
 
 	return output;
@@ -16,7 +16,7 @@ function buyableDisplay(buyable, description) {
 
 function complexCostDisplay(cost) {
 	let output = "";
-	output += "Cost: ".bold() + Object.entries(cost).map(e => `${format(e[1])} ${e[0]}`).join("<br>");
+	output += "Cost: ".bold() + Object.entries(cost).map(e => `${exponentialFormat(e[1])} ${e[0]}`).join("<br>");
 	return output;
 }
 
