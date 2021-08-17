@@ -23,9 +23,9 @@ addLayer("Fw", {
         product = product.mul(player.Pw.points);
         product = product.mul(player.Ew.points);
         if (hasUpgrade("Ew", 21)) product = product.mul(player.Fw.points.add(1));
-        if (hasUpgrade("m", 41)) product = product.mul(player.w.points.add(1));
+        if (hasUpgrade("Pw", 21)) product = product.mul(player.w.points.add(1));
 
-        if (hasUpgrade("Ew", 21)) product = product.pow(2);
+        if (hasUpgrade("m", 41)) product = product.pow(2);
 
         return product;
     }, 
@@ -71,9 +71,11 @@ addLayer("Fw", {
             buy() {
                 const cost = temp.Fw.buyables[11].cost;
 
-                player.Ew.points = player.Ew.points.sub(cost.Essence);
-                player.Pw.points = player.Pw.points.sub(cost.Power);
-                player.Fw.points = player.Fw.points.sub(cost.Factory);
+                if (!hasUpgrade("Ew", 41)) {
+                    player.Ew.points = player.Ew.points.sub(cost.Essence);
+                    player.Pw.points = player.Pw.points.sub(cost.Power);
+                    player.Fw.points = player.Fw.points.sub(cost.Factory);
+                }
 
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
             },

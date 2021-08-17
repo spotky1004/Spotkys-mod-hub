@@ -9,6 +9,7 @@ addLayer("m", {
 		points: new Decimal(0),
     }},
     canReset() { return player.rotationCount.gte(1) || (player.playing !== null && player[player.playing].points.gte(1e20)); },
+    prestigeButtonText() {return layers.m.canReset() ? `Reset for <b>+${format(layers.m.gainMult())}</b> Matter` : `Reach 1e20 ${layers.m.baseResource()} to Reset`},
     color: "#ffffff",
     requires: new Decimal(1e20), 
     resource: "Matter", 
@@ -96,7 +97,7 @@ addLayer("m", {
         },
         41: {
             title: "Water III",
-            description: "Squrae the Water product",
+            description: "Squrae the Water product, Power Generator won't take resources",
             cost: new Decimal(25),
             unlocked() {return hasUpgrade("m", 31)},
         },
