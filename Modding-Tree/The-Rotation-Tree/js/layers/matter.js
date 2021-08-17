@@ -9,7 +9,7 @@ addLayer("m", {
 		points: new Decimal(0),
     }},
     canReset() { return player.rotationCount.gte(1) || (player.playing !== null && player[player.playing].points.gte(1e20)); },
-    prestigeButtonText() {return layers.m.canReset() ? `Reset for <b>+${format(layers.m.gainMult())}</b> Matter` : `Reach 1e20 ${layers.m.baseResource()} to Reset`},
+    prestigeButtonText() {return layers.m.canReset() ? `Reset for <b>+${formatWhole(layers.m.gainMult())}</b> Matter` : `Reach 1e20 ${layers.m.baseResource()} to Reset`},
     color: "#ffffff",
     requires: new Decimal(1e20), 
     resource: "Matter", 
@@ -21,9 +21,9 @@ addLayer("m", {
             function() {
                 let output = [];
                 output.push("Matter Gain Breakdown");
-                output.push(`<span style="color: ${layers.m.color}">Base</span>: ${format(1)}`);
-                if (player.rotationDone.w.gte(1)) output.push(`<span style="color: ${layers.w.color}">Water</span> (${format(player.rotationDone.w)} loop): +${format(player.rotationDone.w)}`);
-                output.push(`<span>Total</span>: ${format(layers.m.gainMult())}`);
+                output.push(`<span style="color: ${layers.m.color}">Base</span>: ${formatWhole(1)}`);
+                if (player.rotationDone.w.gte(1)) output.push(`<span style="color: ${layers.w.color}">Water</span> (${formatWhole(player.rotationDone.w)} loop): +${formatWhole(player.rotationDone.w)}`);
+                output.push(`<span>Total</span>: ${formatWhole(layers.m.gainMult())}`);
 
                 return output.join("<br>");
             }
@@ -67,7 +67,7 @@ addLayer("m", {
         12: {
             title: "Expension",
             description: "Unlock Air",
-            cost: new Decimal(25),
+            cost: new Decimal(50),
             unlocked() {return hasUpgrade("m", 41)},
         },
         13: {
