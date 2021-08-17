@@ -50,8 +50,8 @@ addLayer("m", {
             const layer = layers[name];
             if (typeof layer.row !== "number" || layer.row >= 4) continue;
             const startData = startPlayer[name];
-            // delete startData.unlocked;
             player[name] = startData;
+            player[name].forceTooltip = true;
         }
 
         player.playing = null;
