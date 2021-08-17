@@ -1,6 +1,6 @@
 function overallWaterMult() {
     let mult = new Decimal(1);
-    if (hasUpgrade("m", 21)) mult = mult.mul(2);
+    if (hasUpgrade("m", 21)) mult = mult.mul(3);
     if (hasUpgrade("m", 32)) mult = mult.mul(temp.m.upgrades[31].effect);
 
     return mult;
