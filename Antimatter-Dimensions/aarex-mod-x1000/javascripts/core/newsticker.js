@@ -1,48 +1,113 @@
 function updateNewsArray() {
 newsArray = [//always true
-["The cookie is a lie.", true, "a1"], ["Antimatter cookies have been confirmed to not exist, whoever claims that, stop.", true, "a4"], ["Antimatter ghosts do not exist. Just like matter ghosts. They don't have any matter, for that matter.", true, "a2"],
+["The cookie is a lie.", true, "a1"], 
+["Antimatter ghosts do not exist. Just like matter ghosts. They don't have any matter, for that matter.", true, "a2"],
 ["Nuclear power plants have been abandoned in favor of antimatter power.", true, "a3"],
-["Antimatter prices have drastically dropped due to newfound abundance.", true, "a5"], ["In the news today, humans make an antimatter animal sacrifice to the antimatter god.", true, "a6"], ["You made one antimatter! Whatever that means.", true, "a7"],
-["Scientists confirm that the colour of antimatter is Blurple", true, "a11"], ["How does it matter if its antimatter?", true, "a10"], ["None of this matters", true, "a9"], ["IN THE END, IT DOESN'T ANTIMATTER -hevipelle", true, "a8"],
-["How does NASA organise a party? They planet.", true, "a12"], ["Electrons are now seeing the happy things in life. We're calling these happy electrons 'Positrons.' Wait, that's taken?", true, "a13"],
+["Antimatter cookies have been confirmed to not exist, whoever claims that, stop.", true, "a4"], 
+["Antimatter prices have drastically dropped due to newfound abundance.", true, "a5"], 
+["In the news today, humans make an antimatter animal sacrifice to the antimatter god.", true, "a6"], 
+["You made one antimatter! Whatever that means.", true, "a7"],
+["IN THE END, IT DOESN'T ANTIMATTER -hevipelle", true, "a8"],
+["None of this matters", true, "a9"],
+["How does it matter if its antimatter?", true, "a10"],
+["Scientists confirm that the colour of antimatter is Blurple", true, "a11"],  
+["How does NASA organise a party? They planet.", true, "a12"], 
+["Electrons are now seeing the happy things in life. We're calling these happy electrons 'Positrons.' Wait, that's taken?", true, "a13"],
 ["This completely useless sentence will get you nowhere and you know it. What a horrible obnoxious man would come up with it, he will probably go to hell, and why would the developer even implement it? Even if you kept reading it you wouldn't be able to finish it (the first time).", true, "a14"],
-["GHOST SAYS HELLO -Boo-chan", true, "a15"], ["Can someone tell hevi to calm down? -Mee6", true, "a16"], ["Due to Antimatter messing with physics, a creature that was once a moose is now a human", true, "a17"], ["!hi", true, "a18"],
-["Alright -Alright", true, "a19"], ["The English greeting is not present in Antimatter speak.", true, "a20"], ["To buy max or not to buy max, that is the question", true, "a21"], ["This antimatter triggers me", true, "a22"],
-["No, mom, I can't pause this game.", true, "a23"], ["Scientific notation has entered the battlefield.", true, "a24"], ["Make the Universe Great Again! -Tronald Dump", true, "a25"], ["#dank-maymays", true, "a26"],
-["A new religion has been created, and it's spreading like wildfire. The believers of this religion worship the Heavenly Pelle, the goddess of antimatter. They also believe that 10^308 is infinite.", true, "a27"], ["Someone has just touched a blob, and blown up. Was the blob antimatter, or was the guy made of Explodium?", true, "a28"],
-["If you are not playing on Kongregate or ivark.github.io, the site is bootleg.", true, "a29"], ["Rate 5 on Kongregate so more people can experience this 5 star Rating", true, "a30"], ["BOO!", true, "a31"], ["You ate for too long. -hevipelle", true, "a32"], ["I hate myself. -Boo-chan", true, "a33"],
-["Gee golly -Xandawesome", true, "a34"], ["Above us, there is nothing above, But the stars, above.", true, "a35"], ["If black lives matter, do white lives antimatter?", true, "a36"], ["Somebody wasn't nice, he got an antimatter-storm.", true, "a37"],
-["You are living, you occupy space, you have a mass, you matter... unless you antimatter.", true, "a38"], ["I clicked too fast... my PC is now dematerialised.", true, "a39"],
+["GHOST SAYS HELLO -Boo-chan", true, "a15"], 
+["Can someone tell hevi to calm down? -Mee6", true, "a16"], 
+["Due to Antimatter messing with physics, a creature that was once a moose is now a human", true, "a17"], 
+["!hi", true, "a18"],
+["Alright -Alright", true, "a19"], 
+["The English greeting is not present in Antimatter speak.", true, "a20"], 
+["To buy max or not to buy max, that is the question", true, "a21"], 
+["This antimatter triggers me", true, "a22"],
+["No, mom, I can't pause this game.", true, "a23"], 
+["Scientific notation has entered the battlefield.", true, "a24"], 
+["Make the Universe Great Again! -Tronald Dump", true, "a25"], 
+["#dank-maymays", true, "a26"],
+["A new religion has been created, and it's spreading like wildfire. The believers of this religion worship the Heavenly Pelle, the goddess of antimatter. They also believe that 10^308 is infinite.", true, "a27"], 
+["Someone has just touched a blob, and blown up. Was the blob antimatter, or was the guy made of Explodium?", true, "a28"],
+["If you are not playing on Kongregate or ivark.github.io, the site is bootleg.", true, "a29"], 
+["Rate 5 on Kongregate so more people can experience this 5 star Rating", true, "a30"], 
+["BOO!", true, "a31"], 
+["You ate for too long. -hevipelle", true, "a32"], 
+["I hate myself. -Boo-chan", true, "a33"],
+["Gee golly -Xandawesome", true, "a34"], 
+["Above us, there is nothing above, But the stars, above.", true, "a35"], 
+["If black lives matter, do white lives antimatter?", true, "a36"], 
+["Somebody wasn't nice, he got an antimatter-storm.", true, "a37"],
+["You are living, you occupy space, you have a mass, you matter... unless you antimatter.", true, "a38"], 
+["I clicked too fast... my PC is now dematerialised.", true, "a39"],
 ["If an alien lands on your front lawn and extends an appendage as a gesture of greeting, before you get friendly, toss it an eightball. If the appendage explodes, then the alien was probably made of antimatter. If not, then you can proceed to take it to your leader. -Neil deGrasse Tyson", true, "a40"],
-["There always must be equal matter than there is antimatter, I guess your mom balances that a bit", true, "a41"], ["Nothing is created, nothing is destroyed.", true, "a42"], ["We dug a big hole to store this antimatter... Adele's rolling in it.", true, "a43"],
-["If everything is antimatter, how can you see yourself?", true, "a44"], ["The stock markets have crashed due to antimatter beings somehow knowing what they will be tomorrow.", true, "a45"], ["My dog ate too much antimatter, now he is doing 'meow!'", true, "a46"], ["If you put infinity into your calculator it will result in 42!", true, "a47"],
-["You have found the rarest antimatter pepe, it's ultra rare!", true, "a48"], ["Can we get 1e169 likes on this video??? Smash that like button!!", true, "a49"],
-["The smell of antimatter has been revealed. It smells like kittens", true, "a50"], ["Just another antimatter in the wall", true, "a51"], ["GET SNIPED, WEAKLING", true, "a52"], ["Thanks a lot -dankesehr", true, "a53"],
-["This world situation is a SOS situation to the world!! MAYDAY, MAYDAY!!", true, "a54"], ["As for sure as the sun rises in the west, of all the singers and poets on earth, I am the bestest. - hevipelle", true, "a55"], ["I'm good at using github -hevipelle", true, "a56"],
-["A new chat server has been created for Antimatter people to spy on Matter people, and the world has fallen into chaos and discord", true, "a57"], ["A new study has come out linking the consumption of potatoes with increased risk of Antimatter implosion.  Scientists suggest eating more.", true, "a58"], ["I thought that I fixed that bug but apparently some update broke it again -hevipelle", true, "a59"],
-["Maybe I'm gay then -Bootato", true, "a60"], ["Breaking news! Hevipelle has just announced that the buy max button is in fact going to be removed!", true, "a61"], ["I dedicate this game to my girlfriend", true, "a62"],
+["There always must be equal matter than there is antimatter, I guess your mom balances that a bit", true, "a41"], 
+["Nothing is created, nothing is destroyed.", true, "a42"], 
+["We dug a big hole to store this antimatter... Adele's rolling in it.", true, "a43"],
+["If everything is antimatter, how can you see yourself?", true, "a44"], 
+["The stock markets have crashed due to antimatter beings somehow knowing what they will be tomorrow.", true, "a45"], 
+["My dog ate too much antimatter, now he is doing 'meow!'", true, "a46"], 
+["If you put infinity into your calculator it will result in 42!", true, "a47"],
+["You have found the rarest antimatter pepe, it's ultra rare!", true, "a48"], 
+["Can we get 1e169 likes on this video??? Smash that like button!!", true, "a49"],
+["The smell of antimatter has been revealed. It smells like kittens", true, "a50"], 
+["Just another antimatter in the wall", true, "a51"], 
+["GET SNIPED, WEAKLING", true, "a52"], 
+["Thanks a lot -dankesehr", true, "a53"],
+["This world situation is a SOS situation to the world!! MAYDAY, MAYDAY!!", true, "a54"], 
+["As for sure as the sun rises in the west, of all the singers and poets on earth, I am the bestest. - hevipelle", true, "a55"], 
+["I'm good at using github -hevipelle", true, "a56"],
+["A new chat server has been created for Antimatter people to spy on Matter people, and the world has fallen into chaos and discord", true, "a57"], 
+["A new study has come out linking the consumption of potatoes with increased risk of Antimatter implosion.  Scientists suggest eating more.", true, "a58"], 
+["I thought that I fixed that bug but apparently some update broke it again -hevipelle", true, "a59"],
+["Maybe I'm gay then -Bootato", true, "a60"], 
+["Breaking news! Hevipelle has just announced that the buy max button is in fact going to be removed!", true, "a61"], 
+["I dedicate this game to my girlfriend", true, "a62"],
 ["Antimatter guns don't kill antimatter people, antimatter people kill antimatter people but does that mean that antimatter toaster doesn't toast antimatter toasts, antimatter toast toasts antimatter toasts?", true, "a63"],
-["But to an antimatter person, wouldn't they be matter and us antimatter?", true, "a64"], ["And nothing Antimatters", true, "a65"],
+["But to an antimatter person, wouldn't they be matter and us antimatter?", true, "a64"], 
+["And nothing Antimatters", true, "a65"],
 ["School starting up strikes fear in students universe-wide, as schools are no longer segregated between Matter and antimatter. Annihilation is prominent.", true, "a66"],
-["Why does no one talk about the 0th dimension?", true, "a67"], ["The fatter catter satter on the antimatter.", true, "a68"], ["Who let the DOgs out?", true, "a69"], ["If you can't read this you disabled the news.", true, "a70"],
-["Doesn't leave, just mutes the server so he doesn't receive notifications", true, "a71"], ["Most quotes found online are falsely atributed -Abraham Lincoln", true, "a72"], ["It should work now, but it doesn't -hevipelle", true, "a73"],
-["This game doesn't have any errors... they're alternative successes.", true, "a74"], ["A third type of matter has been discovered: null matter. It doesn't do anything and is basically useless. The scientists who discovered it were fired.", true, "a75"],
-["Your Mother-in-Law keeps nagging you about all these antimatter colliders.", true, "a76"], ["If matter exists, then does antimatter not exist?", true, "a77"], ["Antimatter=Life. Not cobblestone, not dirt, nothing like that. Antimatter.", true, "a78"],
-["Breaking News: Error Error Error", true, "a79"], ["How much antiwood could an antiwoodchuck chuck if an antiwoodchuck could chuck antiwood?", true, "a80"], ["Chaos isnt a pit, chaos is a matter", true, "a81"],
-["That's because I'm a good game developer and pushed some code that totally works -hevipelle", true, "a82"], ["What's the matter with anti matter?", true, "a83"],
-["Doesn't it annoy you when people don't finish their", true, "a84"], ["Don't anti-quote me on this", true, "a85"], ["Antimatter is honest, matter makes up everything", true, "a86"],
-["According to no known laws of aviation, there are multiple ways a bee should be able to be swallowed up by antimatter", true, "a87"], ["You either die as matter or live long enough to be consumed by the antimatter, and then die again", true, "a88"],
-["If you gaze long enough into the antimatter, the antimatter gazes back into you", true, "a89"], ["Always gonna give you up. Always gonna let you down. - anti-Rick Astley", true, "a90"],
-["Antimatter Dimensions: the next update is always 5 hours away. Always.", true, "a91"], ["#DimensionLivesAntimatter", true, "a92"],
-["Do antimatter people with suicidal thoughts get depressants?", true, "a93"], ["To matter or to antimatter, that is the question.", true, "a94"], ["Why is everything so Hevi?",  true, "a95"],
+["Why does no one talk about the 0th dimension?", true, "a67"], 
+["The fatter catter satter on the antimatter.", true, "a68"], 
+["Who let the DOgs out?", true, "a69"], 
+["If you can't read this you disabled the news.", true, "a70"],
+["Doesn't leave, just mutes the server so he doesn't receive notifications", true, "a71"], 
+["Most quotes found online are falsely atributed -Abraham Lincoln", true, "a72"], 
+["It should work now, but it doesn't -hevipelle", true, "a73"],
+["This game doesn't have any errors... they're alternative successes.", true, "a74"], 
+["A third type of matter has been discovered: null matter. It doesn't do anything and is basically useless. The scientists who discovered it were fired.", true, "a75"],
+["Your Mother-in-Law keeps nagging you about all these antimatter colliders.", true, "a76"], 
+["If matter exists, then does antimatter not exist?", true, "a77"], 
+["Antimatter=Life. Not cobblestone, not dirt, nothing like that. Antimatter.", true, "a78"],
+["Breaking News: Error Error Error", true, "a79"], 
+["How much antiwood could an antiwoodchuck chuck if an antiwoodchuck could chuck antiwood?", true, "a80"], 
+["Chaos isnt a pit, chaos is a matter", true, "a81"],
+["That's because I'm a good game developer and pushed some code that totally works -hevipelle", true, "a82"], 
+["What's the matter with anti matter?", true, "a83"],
+["Doesn't it annoy you when people don't finish their", true, "a84"], 
+["Don't anti-quote me on this", true, "a85"], 
+["Antimatter is honest, matter makes up everything", true, "a86"],
+["According to no known laws of aviation, there are multiple ways a bee should be able to be swallowed up by antimatter", true, "a87"], 
+["You either die as matter or live long enough to be consumed by the antimatter, and then die again", true, "a88"],
+["If you gaze long enough into the antimatter, the antimatter gazes back into you", true, "a89"], 
+["Always gonna give you up. Always gonna let you down. - anti-Rick Astley", true, "a90"],
+["Antimatter Dimensions: the next update is always 5 hours away. Always.", true, "a91"], 
+["#DimensionLivesAntimatter", true, "a92"],
+["Do antimatter people with suicidal thoughts get depressants?", true, "a93"], 
+["To matter or to antimatter, that is the question.", true, "a94"], 
+["Why is everything so Hevi?",  true, "a95"],
 ["It has been scientifically proven ages ago, that cats made of matter are assholes. We have good news, because cats made of antimatter are still assholes",  true, "a96"],
-["Nobody once told me the anti-world wasn’t gonna roll me", true, "a97"], ["Antimatter is like internet. If you're reading this, you can't have enough of it.",  true, "a98"],
+["Nobody once told me the anti-world wasn’t gonna roll me", true, "a97"], 
+["Antimatter is like internet. If you're reading this, you can't have enough of it.",  true, "a98"],
 ["Antimatter has made time travel possible and I'm here to make the past great again. - 2nd President of the World",  true, "a99"],
-["Please insert Disc -1 to continue playing  Antimatter Dimensions ™.", true, "a100"], ["Lore - coming soon ™", true, "a101"],
-["I was a part of antimatter like you once. But then I got matter in my knee.", true, "a101"], ["Antimatter... antimatter never changes... until you get to quantum physics of antimatter, but we don't have enough tachyon particles for that.", true, "a102"],
-["There is no war in Antimatter Dimensions. Here we are safe. Here we are free.", true, "a103"], ["Antimatter has solved global warming.  In unrelated news, the Earth no longer exists.",  true, "a104"],
+["Please insert Disc -1 to continue playing  Antimatter Dimensions ™.", true, "a100"], 
+["I was a part of antimatter like you once. But then I got matter in my knee.", true, "a101"], 
+["Antimatter... antimatter never changes... until you get to quantum physics of antimatter, but we don't have enough tachyon particles for that.", true, "a102"],
+["There is no war in Antimatter Dimensions. Here we are safe. Here we are free.", true, "a103"], 
+["Antimatter has solved global warming.  In unrelated news, the Earth no longer exists.",  true, "a104"],
 ["Anti-water, anti-Earth, anti-fire, anti-air. Long ago, the four anti-nations lived together in harmony. Then, everything changed when the anti-Fire Nation attacked. Only the anti-Avatar, the master of all 4 anti-elements could bring balance to the anti-world, but when the world needed him most, he accidentally touched some regular matter and exploded.",  true, "a105"],
-["If you open an anti-lootbox, are you selling random possessions for in-game currency?", true, "a106"], ["People are beginning to question Hevipelle's existence.",  true, "a107"], ["Antimatter Dimensions is proud to be sponsored by Lehmä! Now offering - grass eating lessons! Learn what grass is safe to eat and what grass isn't.",  true, "a108"],
+["If you open an anti-lootbox, are you selling random possessions for in-game currency?", true, "a106"], 
+["People are beginning to question Hevipelle's existence.",  true, "a107"], 
+["Antimatter Dimensions is proud to be sponsored by Lehmä! Now offering - grass eating lessons! Learn what grass is safe to eat and what grass isn't.",  true, "a108"],
 ["It is the year 2422. The update still isn't out. Hevi is working on balancing unfunity dimension dimensions and challenges for the 38th layer of prestige. There are over 100 rows of achievements. They're getting ready to start using breaking_breaking_breaking_infinity.js", true, "a109"],
 ["Import Christmas for a secret theme", true, "a110"],
 ["What the f*ck did you just f*cking say about me, you little b*tch? I’ll have you know I graduated top of my class in the Antimatter Seals, and I’ve been involved in numerous secret raids on the 9th Dimension, and I have over 300 NNnNeMI-NNnNe confirmed kills. I am trained in potato warfare and I’m the top sniper in the entire Antimatter Galactic armed forces. You are nothing to me but just another infinity. I will wipe you the f*ck out with Max All mashing the likes of which has never been seen before in this dimension, mark my f*cking words. You think you can get away with saying that shit to me over the Interdimensional network? Think again, f*cker. As we speak I am contacting my secret network of autobuyers across the galaxy and your IP is being traced right now so you better prepare for the Big Crunch, maggot. The Big Crunch that wipes out the pathetic little thing you call your life. You’re f*cking dead, kid. I can be anywhere, anytime, and I can kill you in over seven 😠💩 different ways, and that’s just with my mouse. Not only am I extensively trained in dimension shift combat, but I have access to the entire arsenal of the Antimatter Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the universe, you little shit. If only you could have known what unhevi retribution your little “clever” comment was about to bring down upon you, maybe you would have held your f*cking tongue. But you couldn’t, you didn’t, and now you’re buying until 10, you goddamn idiot. I will shit antimatter shit all over you and you will drown in it. You’re f*cking dead, kiddo.", true, "a111"],
@@ -73,10 +138,7 @@ newsArray = [//always true
 ["AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAntimatter Dimensions was made by some dude from Finland", true, "a136"],
 ['The Holy trinity of Hevipelle, Antimatter, Infinity Points, and Eternity Points. These 3 resources let us access Hevi’s gift, Time Theorems. And with these Time Theorems, we reach out to Hevi, and call, “Hevi, bless us on this fine day!” And Hevi does. He give us the blessing of Time Studies. These Time Studies were blessings so powerful, Hevi restricted their power. He said, “ I will give you a choice of three paths” and then humanity chose. The short, cheap route of Normal Dimensions, giving instant gratification, the powerful choice of Infinity Dimensions, which were a fast, middle ground path, or Time Dimension, the long wait, and struggle, of humanity. Then, as humanity chose, a crack broke the earth. A serpent snaked out and sneered to humanity, “I will offer the powerful choice of a ninth dimension! I am Slabdrill, lord of all Unhevi. Humanity rose and said “ Begone Slabdrill! We want none of your foul Heresy!” And Hevi rose as well, and smote Slabdrill with his godlike power. As Slabdrill’s corpse fell into the earth, he cried “ this will not be the last of me! Hevi will betr-“ and he fell in the Abyss of matter. Hevi gifted humanity with Eternity upgrades, which boosted infinity dimensions and time dimensions. And Hevi gave humanity his greatest gift . EP multipliers. He said, these will multiply all EP gained by 5, but their cost will increase 25 times. Use them wisely. And Humanity journeyed off with their new power, as Slabdrill’s words echoed in their heads.', true, "a137"],
 ["We have updated our Antimatter Privacy Policy.", true, "a138"],
-  
-// Patreon ones
-["Is this a jojo reference?", true, "pat1"],
-
+["Lore - coming soon ™", true, "a139"],
 //basic (pre-inf)
 ["You just made your 1,000,000,000,000,000 antimatter. This one tastes like chicken", "player.money.e == 15", "b1"],
 ["Nerf the galaxies please.", "player.galaxies == 2 || player.infinitied > 0", "b2"],
@@ -148,10 +210,6 @@ newsArray = [//always true
 //missable / pay req
 ["How dare you actually get zero deaths on a first run?", 'player.achievements.includes("r43") && player.infinitied == 1 && player.eternities == 0', "s1"],
 ["Legend says the ninth dimension is supposed to be found here, but I don't see anything.", "player.money.e >= 41900 && !player.replicanti.unl && player.eternities == 0", "s2"],
-["Person with money likes to support this game.", "kongDimMult > 1 || kongIPMult > 1", "s3"],
-["Whale is bad at making smart purchases.", "kongIPMult > 500 && kongDimMult < 5e307", "s4"],
-["Whale complains that the game broke.", "kongDimMult > 5e307", "s5"],
-["Whale complains that their buying isn't doing anything.", "kongIPMult > 1.8e16", "s6"],
 //Aarex's Modifications
 ["A brave man tried NG- and NG-- modes at the same time, but he will be dead before he would complete this mode.", 'player.aarexModifications.newGameMinusVersion && player.galacticSacrifice', "am1"],
 ["You would be dead if you started writing down your antimatter amount", 'player.money.gt(Decimal.pow(10, 3 * 86400 * 365.2425 * 79.3 / 10))', "am2"],
@@ -305,74 +363,113 @@ newsArray = [//always true
 ["ELECTRONS CONSUME YOUR STARS", "player.masterystudies !== undefined && player.masterystudies.includes('d7')", "am152"],
 ['"New game dammit" - GrayStillPlays', "player.masterystudies !== undefined", "am153"],
 ['"More zeroes dammit" - GrayStillPlays', "player.masterystudies !== undefined", "am154"],
-["i know your type. you're, uh, very determined, aren't you? you'll never give up, even if there's, uh... absolutely NO benefit to persevering whatsoever. if i can make that clear. no matter what, you'll just keep going. not out of any desire for good or evil... but just because you think you can. and because you \"can\"... ... you \"have to\". but now, you've reached the end. there is nothing left for you now. so, uh, in my personal opinion... the most \"determined\" thing you can do here? is to, uh, completely give up. and... well... do literally anything else.", "player.masterystudies !== undefined", "am155"]
-/*NEXT ID: am156*/
+["i know your type. you're, uh, very determined, aren't you? you'll never give up, even if there's, uh... absolutely NO benefit to persevering whatsoever. if i can make that clear. no matter what, you'll just keep going. not out of any desire for good or evil... but just because you think you can. and because you \"can\"... ... you \"have to\". but now, you've reached the end. there is nothing left for you now. so, uh, in my personal opinion... the most \"determined\" thing you can do here? is to, uh, completely give up. and... well... do literally anything else.", "player.masterystudies !== undefined", "am155"],
+["NG+3 has prestige layers, and onions have layers. Does this mean NG+3 is a prestige onion?", "player.newsArray.includes('am85')", "am156"],
+["First-time developer releases incremental game, gets mocked by Aarex for inflation", true, "am157"],
+["Click on the news message before this if you can travel back in time.", true, "am158"],
+["After Aarex's life, NG+Pi is now finally released!", "tmp.ngp3", "am159"],
+["The next hour is in 5 updates- Wait, it's not supposed to go like that?", true, "am160"],
+["The invasion of the battle replicants has been postponed indefinitely. Everyone, please remain calm!", "player.masterystudies && player.masterystudies.includes('d12')", "am161"],
+['"Onion was a mistake." ~ TheTastyPi, 2020', "player.newsArray.includes('am87') && player.newsArray.includes('am172')", "am162"],
+['"Egg is the new Onion" ~ I\'m sorry, 2020', "player.newsArray.includes('am82') && player.newsArray.includes('am172')", "am163"],
+["Anti-Coronavirus has been detected. Surprisingly, it only seems to be making more antimatter.", true, "am164"],
+["Are you getting tired for not being a ghost? Come into the Ghostify machine and see yourself! 308 Antimatter Drive, Dimensionverse", "ghostified", "am165"],
+["Statistics show that if every antimatter were 1.00e4 yoctometers cubed, the world would be gone. Shut up statistics page.", true, "am166"],
+["It's photons, not protons!", "ghostified && player.ghostify.ghostlyPhotons.unl", "am167"],
+["Why would you dilate a ghost", "ghostified", "am168"],
+["Can you buy max light empowerments?", "ghostified && player.ghostify.ghostlyPhotons.enpowerments >= 3", "am169"],
+["There is no 0x Brave Milestone because no one talks about it.", "ghostified", "am170"],
+["Meta-infinity was proven to be possible. We can now big crunch in our big crunches.", "player.break", "am171"],
+[":egg:", true, "am172"],
+["We reported that the Supreme Leader of Ninth Dimension, Nina, is dead. Or he became a ghost?", "player.resets >= 5 || player.galaxies > 0", "am173"],
+["1.7e308 people have realised that there is only 8 dimensions. They are on the hunt for the ninth.", "player.resets >= 5 || player.galaxies > 0", "am174"],
+["300 news messages and counting? Wow. You are so addicted.", "player.newsArray.length >= 300", "am175"],
+["You have read over meta^-1-Infinity unique news ticker messages! What a great milestone!", "player.newsArray.length > 308", "am176"],
+["People who read at least 350 news tickers are really unlikely to be ghosts.", "player.newsArray.length >= 350", "am177"],
+["You are a no-life news reader.", "player.newsArray.length >= 400", "am178"],
+["Is not called matter dimensions for that?", "tmp.ngp3 && tmp.qu.bigRip.active", "am179"],
+["aarex has retired back to his cave after apeasing the masses with the higgs boson", true, "am180"],
+["We launched a mission rocket to land on a ghostly moon.", true, "am181"],
+["BREAKING NEWS! After the killing of a antimatter person, antimatter people started protesting!", true, "am182"],
+["Antimatter people protests have been extremely intensified!", true, "am183"],
+['"Reformatting the whole code feels like I have to restart the test branch." ~ Aarex', true, "am184"],
+['The further meta you reach, the further power tower you go.', true, "am185"],
+['Later, I will finally implement original ideas from future NG+3 updates.', "tmp.ngp3", "am186"],
+['Also later, I will implement ideas that have different gameplay than other mechanics.', "tmp.ngp3", "am187"],
+["This news ticker has been softcapped so you can't read the re-.", true, "am188"]
+["After all, I do build up speed for 5 hours. But to answer that, we need to talk about parallel dimensions. And if you thought my other mechanics were complicated, just you wait. Ok, so Mario's antimatter is a floating point logarithm, but it's converted to sci notation when the game uses break_infinity.js. In other words, Mario's antimatter can basically be any logarithm number, but it's converted to sci notation between negative 9ee15, and positive 9ee15 inclusive. So, any fractional antimatter is truncated, and any numbers too big or too small will break break_infinity.js. Graphically, that means the antimatter you used for break_infinity.js is always inside of The Box, so if the antimatter's in The Box, then its logarithmica_lite.js value and the value used for break_infinity.js are the same. Albeit, maybe off by a single fraction due to the library switch. But if the antimatter leaves The Box, then its logarithmica_lite.js value and its break_infinity.js value will separate, since break_infinity.js will just break...", true, "am189"],
+["The next news ticker is sponsored by the anti-store. Get your daily anti-cinnamon toast crunch!", true, "am190"],
+["The photons wall seems to be gone, but there's only the bricks of it left. We should maybe do stuff with those bricks, except they might be made out of concentrated time, so that's a bad idea...", true, "am191"],
+["3000 patches ahead of the main branch, 6 different reset layers, and an additional half year of content", true, "am192"],
+["Remember the good old days with no softcaps...well the new devs came in and put in too many!", true, "am193"]
+/*NEXT ID: am194*/
 ];}
 
 document.addEventListener("visibilitychange", function() {if (!document.hidden) {scrollNextMessage();}}, false);
 var scrollTimeouts = [];
 var nextMsgIndex;
 function scrollNextMessage() {
-  //don't run if hidden to save performance
-  if (player.options.newsHidden) return false
-  var s = document.getElementById('news');
-  updateNewsArray();
-  tmp.blankedOut=false
+        //don't run if hidden to save performance
+        if (typeof (player) == "undefined") return
+        if (player.options.newsHidden) return false
+        var s = document.getElementById('news');
+        updateNewsArray();
+        tmp.blankedOut = false
+        
+        //select a message at random
+        try {
+                do {nextMsgIndex = Math.floor(Math.random() * newsArray.length)} while (!eval(newsArray[nextMsgIndex][1]) || (newsArray[nextMsgIndex][2].indexOf("am") > -1 && !player.achievements.includes("r22")))
+        } catch(e) {
+                console.log("Newsarray doesn't work at idx " + nextMsgIndex)
+        }
+        scrollTimeouts.forEach(function(v) {clearTimeout(v);});
+        scrollTimeouts = [];
+        
+        //set the text
+        var m = newsArray[nextMsgIndex][0];
+        if (newsArray[nextMsgIndex][2] == "am37") {
+                //coded by Naruyoko
+                var m = ""
+                for (var i = 0; i < 256; i++) m += String.fromCharCode(Math.random() * 95 + 32);
+        }
+        s.textContent = m
+        
+        //get the parent width so we can start the message beyond it
+        let parentWidth = s.parentElement.clientWidth;
+        
+        //set the transition to blank so the move happens immediately
+        s.style.transition = '';
+        //move div_text to the right, beyond the edge of the div_container
+        s.style.transform = 'translateX('+parentWidth+'px)';
+        
+        //we need to use a setTimeout here to allow the browser time to move the div_text before we start the scrolling
+        scrollTimeouts.push(setTimeout( function() {
+                //distance to travel is s.parentElement.clientWidth + s.clientWidth + parent padding
+                //we want to travel at rate pixels per second so we need to travel for (distance / rate) seconds
+                let dist = s.parentElement.clientWidth + s.clientWidth + 20; //20 is div_container padding
+                let rate = 100; //change this value to change the scroll speed
+                let transformDuration = dist / rate;
+                if (!player.options.newsHidden && !player.newsArray.includes(newsArray[nextMsgIndex][2])) {
+                        player.newsArray.push(newsArray[nextMsgIndex][2]);
+                        if (player.newsArray.length>=50) giveAchievement("Fake News")
+                        if (!tmp.ngp3l&&player.newsArray.length>=400) giveAchievement("400% Breaking News")
+                }
 
-  //select a message at random
-  try {
-    do {nextMsgIndex = Math.floor(Math.random() * newsArray.length)} while (!eval(newsArray[nextMsgIndex][1]) || (newsArray[nextMsgIndex][2].indexOf("am") > -1 && !player.achievements.includes("r22")))
-  } catch(e) {
-      console.log("Newsarray doesn't work at idx " + nextMsgIndex)
-  }
-  scrollTimeouts.forEach(function(v) {clearTimeout(v);});
-  scrollTimeouts = [];
 
-  //set the text
-  var m = newsArray[nextMsgIndex][0];
-  if (newsArray[nextMsgIndex][2] == "am37") {
-    //coded by Naruyoko
-    var m = ""
-    for (var i=0;i<256;i++) m+=String.fromCharCode(Math.random()*95+32);
-  }
-  s.textContent = m
-
-  //get the parent width so we can start the message beyond it
-  let parentWidth = s.parentElement.clientWidth;
-
-  //set the transition to blank so the move happens immediately
-  s.style.transition = '';
-  //move div_text to the right, beyond the edge of the div_container
-  s.style.transform = 'translateX('+parentWidth+'px)';
-
-  //we need to use a setTimeout here to allow the browser time to move the div_text before we start the scrolling
-  scrollTimeouts.push(setTimeout( function() {
-    //distance to travel is s.parentElement.clientWidth + s.clientWidth + parent padding
-    //we want to travel at rate pixels per second so we need to travel for (distance / rate) seconds
-    let dist = s.parentElement.clientWidth + s.clientWidth + 20; //20 is div_container padding
-    let rate = 100; //change this value to change the scroll speed
-    let transformDuration = dist / rate;
-
-    if (!player.options.newsHidden && !player.newsArray.includes(newsArray[nextMsgIndex][2])) {
-        player.newsArray.push(newsArray[nextMsgIndex][2]);
-        if (player.newsArray.length>=50) giveAchievement("Fake News")
-    }
-
-
-    //set the transition duration
-    s.style.transition = 'transform '+transformDuration+'s linear';
-    let textWidth = s.clientWidth;
-    //we need to move it to -(width+parent padding) before it won't be visible
-    s.style.transform = 'translateX(-'+(textWidth+5)+'px)';
-    //automatically start the next message scrolling after this one finishes
-    //you could add more time to this timeout if you wanted to have some time between messages
-	scrollTimeouts.push(setTimeout(function() {
-		if (newsArray[nextMsgIndex][2] == "am104") {
-			tmp.blankedOut=true
-			setTimeout(scrollNextMessage, 60e3)
-		} else scrollNextMessage()
-	}, Math.ceil(transformDuration * 1000)));
-  }, 100));
+                //set the transition duration
+                s.style.transition = 'transform '+transformDuration+'s linear';
+                let textWidth = s.clientWidth;
+                //we need to move it to -(width+parent padding) before it won't be visible
+                s.style.transform = 'translateX(-'+(textWidth+5)+'px)';
+                //automatically start the next message scrolling after this one finishes
+                //you could add more time to this timeout if you wanted to have some time between messages
+                scrollTimeouts.push(setTimeout(function() {
+		        if (newsArray[nextMsgIndex][2] == "am104") {
+			        tmp.blankedOut=true
+			        setTimeout(scrollNextMessage, 60e3)
+		        } else scrollNextMessage()
+                }, Math.ceil(transformDuration * 1000)));
+        }, 100));
 }
 
 function updateGhostlyNewsArray() {
@@ -409,30 +506,33 @@ ghostlyNewsArray = [//Ghostly news ticker messages
 ["Ghosts found a ghostly kind of Radioactive Decays!", "Math.max(Math.max(getRadioactiveDecays('r'), getRadioactiveDecays('g')), getRadioactiveDecays('b')) > 4", "gn30"],
 ["Ghosts discovered that some particles, including bosons, are ghostly!", true, "gn31"],
 ["Ghosts don't know how to write more news. They decided to stop it for today.", true, "gn32"],
-["The Anti-Preon Ghost is getting closer. He will destroy your Nanofield. Stay away from him.", "tmp.bl.upgrades.includes(13)", "gn33"],
-["WARNING! The Anti-Preon Ghost will control over your Nanofield! Be careful! Oh. Worker replicants are warned of that Ghost too.", "tmp.bl.upgrades.includes(21)", "gn34"],
+["The Anti-Preontius is getting closer. He will destroy your Nanofield. Stay away from him.", "tmp.bl.upgrades.includes(13)", "gn33"],
+["WARNING! The Anti-Preontius will control over your Nanofield! Be careful! Oh. Worker replicants are warned of that Ghost too.", "tmp.bl.upgrades.includes(21)", "gn34"],
 ["A ghost tried to take Anti-Preons out, but Bosonic Lab workers decided to ban them out because an Anti-Preon is a resource of Bosonic Lab.", "player.achievements.includes('ng3p81')", "gn35"],
 ["You got one ghostly particle, whatever that means.", "tmp.bl.upgrades.includes(21)", "gn36"],
 ['"Welcome, a new ghost, to the Ghostify layer! Kee-hee-hee!" - Aarex', true, "gn37"],
-["Can you buy max light empowerments?", "player.ghostify.ghostlyPhotons.enpowerments>2", "gn38"],
+["And then the guy turned himself into a pickle ghost. Funniest moment I've ever seen.", true, "gn38"],
 ["Wait a second. This new laboratory isn't anti-Nanofield...", "tmp.bl.upgrades.includes(21)", "gn39"],
-["There is no 0x Brave Milestone because no one talks about it.", true, "gn40"],
+['"ghosts arent scary" ~ Aaron Cook', true, "gn40"],
 ["There are actually no anti-ghosts because ghosts are made of ghostly matter.", true, "gn41"],
 ["Are we living in ghostly universe or anti-ghostly universe?", true, "gn42"],
 ["New matter discovered. Ghostly Matter! The scientists who discovered it were already dead.", true, "gn43"],
 ["Florida man attempts to write down his antimatter. When finishes, he finds out he's a ghost.", true, "gn44"],
-["It's photons, not protons!", true, "gn45"],
+["Do you know that ghosts came from Ghostify? Absolutely not.", true, "gn45"],
 ["Ghostly news company has become partners with us. They are made entirely of ghostly matter.", true, "gn46"],
-["Antimatter ghosts do not exist. Just like matter ghosts. But Ghostly Matter Ghosts do.", true, "gn47"]
+["Antimatter ghosts do not exist. Just like matter ghosts. But Ghostly Matter Ghosts do.", true, "gn47"],
 ["I am a ghost, and I will do science for all eternity!", true, "gn48"],
 ["Ghosts have created their own periodic tables. It looks pretty sophisticated, but the origin of this is unknown.", true, "gn49"],
 ["There's a ghost society somewhere in these universes. It seems they're talking to each other using strange communication.", true, "gn50"],
 ["Florida ghost breaks the universe, and goes beyond the limits.", true, "gn51"],
 ["You still read this news? I thought you wouldn't be interested in our news after reading it for so long...", true, "gn52"],
-["Meta-infinity was proven to be possible. We can now big crunch in our big crunches.", true, "gn53"],
+["Ghosts just accidentally discovered a new dark matter-force particle!", true, "gn53"],
 ["I wonder where all the news gets broadcasted from...", true, "gn54"],
 ["'now i know why i can't get access to the ghostly news!' - usavictor", true, "gn55"],
-["Ghostify is just Quantum but spooky.", true, "gn56"]
+["Ghostify is just Quantum but spooky.", true, "gn56"],
+["Void-Preontius, the Void Ultra-Omnipotent Ghost, decided to take over not only the Barrel... He took over the Barrel!", "tmp.qu.nanofield.apgWoke", "gn57"],
+["GHOST IS YOU", true, "gn58"],
+["Error 404: Ghost Matter not found", true, "gn59"]
 ];}
 
 var ghostlyNewsTickerCache = false
@@ -462,22 +562,22 @@ function nextGhostlyNewsTickerMsg() {
 			newsText.style["transition-timing-function"] = "linear"
 			newsText.style["transition-duration"] = (duration / 100) + "s"
 			setTimeout(function() {
-				if (ghostlyNewsArray[ghostlyNewsIndex][2]=="gn32") {
-					tmp.blankedOut2=true
+				if (ghostlyNewsArray[ghostlyNewsIndex][2] == "gn32") {
+					tmp.blankedOut2 = true
 					setTimeout(function() {
-						ghostlyNewsTickerCache=false
+						ghostlyNewsTickerCache = false
 					}, 60e3)
-				} else ghostlyNewsTickerCache=false
+				} else ghostlyNewsTickerCache = false
 			}, duration * 10)
 		}, 2000)
 	}, 100)
 }
 
 function toggleGhostlyNews(force) {
-	player.options.secrets.ghostlyNews=!player.options.secrets.ghostlyNews
-	document.getElementById("ghostlyNewsTicker").style.height=(player.options.secrets.ghostlyNews?24:0)+"px"
-	document.getElementById("ghostlyNewsTickerBlock").style.height=(player.options.secrets.ghostlyNews?16:0)+"px"
-	document.getElementById("ghostlynewsbtn").textContent=(player.options.secrets.ghostlyNews?"Hide":"Show")+" ghostly news ticker"
+	player.options.secrets.ghostlyNews = !player.options.secrets.ghostlyNews
+	document.getElementById("ghostlyNewsTicker").style.height = (player.options.secrets.ghostlyNews ? 24 : 0)+"px"
+	document.getElementById("ghostlyNewsTickerBlock").style.height = (player.options.secrets.ghostlyNews ? 16 : 0)+"px"
+	document.getElementById("ghostlynewsbtn").textContent = (player.options.secrets.ghostlyNews ? "Hide" : "Show") + " ghostly news ticker"
 }
 
 document.getElementById("ghostlyNewsTicker").onclick = function () {
