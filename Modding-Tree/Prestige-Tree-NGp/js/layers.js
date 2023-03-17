@@ -9185,7 +9185,7 @@ addLayer("ng", {
 	},
 	update() {
   		tmp['ng'].gainMult = this.gainMult();
-	}
+	},
 	canReset() {
 		return player.points.gt(new Decimal("e3.140e16").pow(player.ng.upgrades.includes(33) ? tmp.ng.upgrades[33].effect : 1));
 	},
