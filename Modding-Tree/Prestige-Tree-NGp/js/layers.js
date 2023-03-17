@@ -9190,7 +9190,7 @@ addLayer("ng", {
 		return player.points.gt(new Decimal("e3.140e16").pow(player.ng.upgrades.includes(33) ? tmp.ng.upgrades[33].effect : 1));
 	},
 	getResetGain() {
-		return new Decimal(1);
+		return this.gainMult();
 	},
 	getNextAt() {
 		return new Decimal(5);
