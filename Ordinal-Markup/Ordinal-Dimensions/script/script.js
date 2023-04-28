@@ -1046,7 +1046,7 @@ function render() {
     "Refund back " +
     beautify(calcRefund()) +
     " boosters, but reset all factor shifts (R)";
-  get("dynamicMult").textContent = "Your Dynamic Factor is x" + beautify(game.dynamic);
+  get("dynamicMult").textContent = "Your Dynamic Factor is x" + beautify(game.dynamic, 2);
   get("infinityAuto").innerHTML =
     "Your Markup Autobuyer is clicking the Markup button " +
     (game.upgrades.includes(3) && game.autoOn.inf == 1
