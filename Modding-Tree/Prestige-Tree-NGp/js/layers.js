@@ -7946,27 +7946,27 @@ addLayer("ne", {
 		milestones: {
 			0: {
 				requirementDescription: "2,750 Signals",
-				done() { return player.ne.signals.gte(2750) || player.ne.milestones.includes(0) },
+				done() { return player.ne.signals.gte(2750) || tmp.ne.challenges[11].amt.div(100).gte(2750) || player.ne.milestones.includes(0) },
 				effectDescription() { return "Subspace Energy multiplies Signal gain ("+format(player.ss.points.plus(1).sqrt())+"x), and unlock The Neural Network" },
 			},
 			1: {
 				requirementDescription: "50,000 Signals",
-				done() { return player.ne.signals.gte(5e4) || player.ne.milestones.includes(1) },
+				done() { return player.ne.signals.gte(5e4) || tmp.ne.challenges[11].amt.div(100).gte(5e4) || player.ne.milestones.includes(1) },
 				effectDescription() { return "The first Thought effect is squared, and Neuron milestones are kept on all resets up to Row 7 (except Ideas)" },
 			},
 			2: {
 				requirementDescription: "3,000,000 Signals",
-				done() { return player.ne.signals.gte(3e6) || player.ne.milestones.includes(2) },
+				done() { return player.ne.signals.gte(3e6) || tmp.ne.challenges[11].amt.div(100).gte(3e6) || player.ne.milestones.includes(2) },
 				effectDescription() { return "The Thought requirement increases slower (5x -> 3x), the second Thought effect is squared, and multiply Signal gain by your Neurons" },
 			},
 			3: {
 				requirementDescription: "150,000,000 Signals",
-				done() { return player.ne.signals.gte(1.5e8) || player.ne.milestones.includes(3) },
+				done() { return player.ne.signals.gte(1.5e8) || tmp.ne.challenges[11].amt.div(100).gte(1.5e8) || player.ne.milestones.includes(3) },
 				effectDescription() { return "The Thought requirement increases even slower (3x -> 2.5x), and the Neuron effect uses a better formula (becomes exponential instead of sub-linear)" },
 			},
 			4: {
 				requirementDescription: "2.5e9 Signals",
-				done() { return player.ne.signals.gte(2.5e9) || player.ne.milestones.includes(4) },
+				done() { return player.ne.signals.gte(2.5e9) || tmp.ne.challenges[11].amt.div(100).gte(2.5e9) || player.ne.milestones.includes(4) },
 				effectDescription() { return "The Thought requirement increases even slower (2.5x -> 2x), and getting a Thought does not reset Signals" },
 			},
 			5: {
@@ -7979,7 +7979,7 @@ addLayer("ne", {
 			6: {
 				unlocked() { return player.id.unlocked },
 				requirementDescription: "1e21 Signals",
-				done() { return player.ne.signals.gte(1e21) || player.ne.milestones.includes(6) },
+				done() { return player.ne.signals.gte(1e21) || tmp.ne.challenges[11].amt.div(100).gte(1e21) || player.ne.milestones.includes(6) },
 				effectDescription() { return "The Neuron effect is squared & multiplied by your Neural Network level" },
 			},
 			7: {
